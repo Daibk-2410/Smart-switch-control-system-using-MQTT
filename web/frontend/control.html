@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MQTT Relay Control</title>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 30px; }
+        .container { max-width: 500px; margin: auto; }
+        .section { border: 1px solid #ccc; border-radius: 8px; padding: 20px; margin-top: 20px; }
+        button { font-size: 16px; padding: 10px 20px; margin: 5px; }
+        li { list-style: none; padding: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ESP32 MQTT Relay Control</h2>
+        
+        <div class="section">
+            <h3>Manual Control</h3>
+            <button onclick="sendCmd('ON')">ON</button>
+            <button onclick="sendCmd('OFF')">OFF</button>
+            <h3>Status: <span id="status">...</span></h3>
+        </div>
+
+        <div class="section">
+            <h3>Scheduler</h3>
+            <form onsubmit="addSchedule(event)">
+                <label for="start_time">Start Time:</label>
+                <input type="time" id="start_time" required>
+                <label for="end_time">End Time:</label>
+                <input type="time" id="end_time" required>
+                <button type="submit">Add Schedule</button>
+            </form>
+            <h4>Active Schedules:</h4>
+            <ul id="schedule-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
