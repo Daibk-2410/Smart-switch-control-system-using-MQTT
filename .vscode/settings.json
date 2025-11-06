@@ -36,5 +36,13 @@
             "username": "root",
             "database": "iot_project"
         }
-    ]
+    ],
+    "files.associations": {
+        "mqtt_manager.h": "c",
+        "wifi_manager.h": "c",
+        "ultrasonic_sensor.h": "c",
+        "freertos.h": "c",
+        "stdio.h": "c",
+        "gpio.h": "c"
+    }
 }

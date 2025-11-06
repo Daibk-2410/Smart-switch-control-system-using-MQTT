@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "blink",
-    "project_version":    "1",
+    "project_version":    "4ff6662-dirty",
     "project_path":       "D:/workspace/esp32/Bai-tap/blink",
     "idf_path":           "D:/express/Espressif/frameworks/esp-idf-v5.4.1",
     "build_dir":          "D:/workspace/esp32/Bai-tap/blink/build",
@@ -1210,7 +1210,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "D:/workspace/esp32/Bai-tap/blink/build/esp-idf/main/libmain.a",
-            "sources": [ "D:/workspace/esp32/Bai-tap/blink/main/main.c", "D:/workspace/esp32/Bai-tap/blink/main/mqtt_manager.c", "D:/workspace/esp32/Bai-tap/blink/main/relay_control.c", "D:/workspace/esp32/Bai-tap/blink/main/wifi_manager.c" ],
+            "sources": [ "D:/workspace/esp32/Bai-tap/blink/main/main.c", "D:/workspace/esp32/Bai-tap/blink/main/mqtt_manager.c", "D:/workspace/esp32/Bai-tap/blink/main/relay_control.c", "D:/workspace/esp32/Bai-tap/blink/main/wifi_manager.c", "D:/workspace/esp32/Bai-tap/blink/main/ultrasonic_sensor.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

@@ -1,0 +1,163 @@
+ets Jul 29 2019 �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2025 09:49:33[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2f428h (193576) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=0003f450 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=0003f474 vaddr=3ffb0000 size=00ba4h (  2980) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9d440h (644160) map[0m
+[0;32mI (388) esp_image: segment 4: paddr=000dd468 vaddr=3ffb0ba4 size=0336ch ( 13164) load[0m
+[0;32mI (393) esp_image: segment 5: paddr=000e07dc vaddr=40080000 size=178d4h ( 96468) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (442) boot: Disabling RNG early entropy source...[0m
+[0;32mI (453) cpu_start: Multicore app[0m
+[0;32mI (461) cpu_start: Pro cpu start user code[0m
+[0;32mI (461) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (461) app_init: Application information:[0m
+[0;32mI (461) app_init: Project name:     blink[0m
+[0;32mI (465) app_init: App version:      4ff6662-dirty[0m
+[0;32mI (469) app_init: Compile time:     Oct 18 2025 16:56:51[0m
+[0;32mI (474) app_init: ELF file SHA256:  7ef1ad101...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (483) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (487) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (491) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (495) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (501) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (506) heap_init: At 3FFB87A8 len 00027858 (158 KiB): DRAM[0m
+[0;32mI (511) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+I (517) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+[0;32mI (522) heap_init: At 400978D4 len 0000872C (33 KiB): IRAM[0m
+[0;32mI (529) spi_flash: detected chip: generic[0m
+[0;32mI (531) spi_flash: flash io: dio[0m
+[0;33mW (534) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (577) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (607) wifi:wifi driver task: 3ffc0780, prio:23, stack:6656, core=0[0m
+[0;32mI (617) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (617) wifi:wifi certification version: v7.0[0m
+[0;32mI (617) wifi:config NVS flash: enabled[0m
+[0;32mI (617) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (627) wifi:Init management short buffer num: 32[0m
+[0;32mI (637) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (637) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (647) wifi:Init static rx buffer num: 10[0m
+[0;32mI (647) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (657) wifi_init: accept mbox: 6[0m
+[0;32mI (657) wifi_init: tcpip mbox: 32[0m
+[0;32mI (657) wifi_init: udp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp tx win: 5760[0m
+[0;32mI (667) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (677) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (677) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (687) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (697) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (777) wifi:mode : sta (20:43:a8:e5:4d:4c)[0m
+[0;32mI (777) wifi:enable tsf[0m
+[0;32mI (787) WiFi: Connecting to WiFi...[0m
+[0;32mI (797) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (797) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (827) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (897) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1007) wifi:connected with Tro 1, aid = 4, channel 7, BW20, bssid = 4c:12:e8:40:45:30[0m
+[0;32mI (1007) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (1017) wifi:pm start, type: 1[0m
+
+[0;32mI (1017) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1037) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2207) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2207) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (4777) MQTT: 🔌 MQTT client started[0m
+[0;32mI (4787) wifi:<ba-add>idx:0 (ifx:0, 4c:12:e8:40:45:30), tid:0, ssn:5, winSize:64[0m
+[0;32mI (5347) wifi:<ba-add>idx:1 (ifx:0, 4c:12:e8:40:45:30), tid:1, ssn:0, winSize:64[0m
+[0;32mI (6087) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (6817) MAIN: Distance: 804.83 cm[0m
+[0;32mI (8227) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (10277) MAIN: Distance: 804.90 cm[0m
+[0;32mI (12287) MAIN: Distance: 16.02 cm[0m
+[0;32mI (14297) MAIN: Distance: 12.26 cm[0m
+[0;32mI (16307) MAIN: Distance: 23.29 cm[0m
+[0;32mI (18317) MAIN: Distance: 64.67 cm[0m
+[0;32mI (20327) MAIN: Distance: 23.86 cm[0m
+[0;32mI (22337) MAIN: Distance: 16.00 cm[0m
+[0;32mI (24347) MAIN: Distance: 16.64 cm[0m
+[0;32mI (26357) MAIN: Distance: 67.45 cm[0m
+[0;32mI (28367) MAIN: Distance: 69.71 cm[0m
+[0;32mI (30377) MAIN: Distance: 11.23 cm[0m
+[0;32mI (32387) MAIN: Distance: 11.58 cm[0m
+[0;32mI (34397) MAIN: Distance: 11.25 cm[0m
+[0;32mI (36447) MAIN: Distance: 804.94 cm[0m
+[0;32mI (38497) MAIN: Distance: 804.82 cm[0m
+[0;32mI (40547) MAIN: Distance: 804.88 cm[0m
+[0;32mI (42557) MAIN: Distance: 18.25 cm[0m
+[0;32mI (44567) MAIN: Distance: 13.29 cm[0m
+[0;32mI (46577) MAIN: Distance: 13.62 cm[0m
+[0;32mI (48587) MAIN: Distance: 12.26 cm[0m
+[0;32mI (50597) MAIN: Distance: 11.92 cm[0m
+[0;32mI (52607) MAIN: Distance: 11.92 cm[0m
+[0;32mI (54617) MAIN: Distance: 10.20 cm[0m
+[0;32mI (56627) MAIN: Distance: 11.92 cm[0m
+[0;32mI (58677) MAIN: Distance: 804.85 cm[0m
+[0;32mI (60727) MAIN: Distance: 815.65 cm[0m
+[0;32mI (62737) MAIN: Distance: 13.62 cm[0m
+[0;32mI (64787) MAIN: Distance: 804.71 cm[0m
+[0;32mI (66797) MAIN: Distance: 69.58 cm[0m
+[0;32mI (68807) MAIN: Distance: 74.65 cm[0m
+[0;32mI (70817) MAIN: Distance: 71.24 cm[0m
+[0;32mI (72867) MAIN: Distance: 804.76 cm[0m
+[0;32mI (73037) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (74917) MAIN: Distance: 804.78 cm[0m
+[0;32mI (75187) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (76927) MAIN: Distance: 16.33 cm[0m
+[0;32mI (78047) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (78937) MAIN: Distance: 16.33 cm[0m
+[0;32mI (80207) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (80947) MAIN: Distance: 12.95 cm[0m
+[0;32mI (82367) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (82957) MAIN: Distance: 14.66 cm[0m
+[0;32mI (84607) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (84967) MAIN: Distance: 14.65 cm[0m
+[0;32mI (86117) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (86967) MAIN: Distance: 12.61 cm[0m
+[0;32mI (87367) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (88977) MAIN: Distance: 14.65 cm[0m
+[0;32mI (90987) MAIN: Distance: 12.95 cm[0m
+[0;32mI (92997) MAIN: Distance: 12.93 cm[0m
+[0;32mI (95007) MAIN: Distance: 12.93 cm[0m
+[0;32mI (97017) MAIN: Distance: 12.95 cm[0m
+[0;32mI (99017) MAIN: Distance: 12.95 cm[0m
+[0;32mI (101027) MAIN: Distance: 12.95 cm[0m
+[0;32mI (103037) MAIN: Distance: 16.31 cm[0m
+[0;32mI (105047) MAIN: Distance: 12.95 cm[0m
+[0;32mI (107097) MAIN: Distance: 804.82 cm[0m
+[0;32mI (109147) MAIN: Distance: 804.85 cm[0m

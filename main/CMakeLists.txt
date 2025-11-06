@@ -4,4 +4,5 @@ idf_component_register(SRCS "main.c"
                       "mqtt_manager.c"
                       "relay_control.c"
                       "wifi_manager.c"
+                      "ultrasonic_sensor.c"
                 INCLUDE_DIRS ".")

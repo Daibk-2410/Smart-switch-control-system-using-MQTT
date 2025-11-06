@@ -1,39 +1,81 @@
+<!-- frontend/control.html (Đã xóa checkbox) -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>MQTT Relay Control</title>
+    <title>MQTT Relay & Water Level Control</title>
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
-    <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 30px; }
-        .container { max-width: 500px; margin: auto; }
-        .section { border: 1px solid #ccc; border-radius: 8px; padding: 20px; margin-top: 20px; }
-        button { font-size: 16px; padding: 10px 20px; margin: 5px; }
-        li { list-style: none; padding: 5px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>ESP32 MQTT Relay Control</h2>
+        <h2>ESP32 MQTT Control Panel</h2>
         
-        <div class="section">
-            <h3>Manual Control</h3>
-            <button onclick="sendCmd('ON')">ON</button>
-            <button onclick="sendCmd('OFF')">OFF</button>
-            <h3>Status: <span id="status">...</span></h3>
-        </div>
+        <div class="main-content">
+            <!-- ===== CỘT BÊN TRÁI ===== -->
+            <div class="left-column">
+                <div class="section">
+                    <h3>Manual Control</h3>
+                    <button onclick="sendCmd('ON')">ON</button>
+                    <button onclick="sendCmd('OFF')">OFF</button>
+                    <h3>Relay Status: <span id="status">...</span></h3>
+                </div>
+        
+                <div class="section">
+                    <h3>Scheduler</h3>
+                    <form onsubmit="addSchedule(event)">
+                        <label for="start_time">Start Time:</label>
+                        <input type="time" id="start_time" required>
+                        <label for="end_time">End Time:</label>
+                        <input type="time" id="end_time" required>
+                        <button type="submit">Add Schedule</button>
+                    </form>
+                    <h4>Active Schedules:</h4>
+                    <ul id="schedule-list"></ul>
+                </div>
+            </div>
 
-        <div class="section">
-            <h3>Scheduler</h3>
-            <form onsubmit="addSchedule(event)">
-                <label for="start_time">Start Time:</label>
-                <input type="time" id="start_time" required>
-                <label for="end_time">End Time:</label>
-                <input type="time" id="end_time" required>
-                <button type="submit">Add Schedule</button>
-            </form>
-            <h4>Active Schedules:</h4>
-            <ul id="schedule-list"></ul>
+            <!-- ===== CỘT BÊN PHẢI (Đã xóa checkbox) ===== -->
+            <div class="right-column">
+                <div class="section">
+                    <h3>Giám sát & Điều khiển Tự động</h3>
+                    
+                    <h4>Khoảng cách hiện tại:</h4>
+                    <h2><span id="distance-value">--</span> cm</h2>
+                    <p style="color: #666;">(Khoảng cách càng nhỏ, mực nước càng cao)</p>
+                    <hr>
+
+                    <h4>Cài đặt ngưỡng bơm tự động:</h4>
+                    <div class="limit-setter-grid">
+                        <div class="limit-input-group">
+                            <label for="turn-on-distance"><b>Bật</b> Relay khi khoảng cách ≤</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="turn-on-distance" placeholder="ví dụ: 20">
+                                <span>cm</span>
+                            </div>
+                            <small>(Mực nước tối thiểu)</small>
+                        </div>
+                        
+                        <div class="limit-input-group">
+                            <label for="turn-off-distance"><b>Tắt</b> Relay khi khoảng cách ≥</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="turn-off-distance" placeholder="ví dụ: 80">
+                                <span>cm</span>
+                            </div>
+                            <small>(Mực nước đầy)</small>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="setLimits()">Lưu và Kích hoạt Tự động</button>
+                    <button type="button" class="delete-button" onclick="clearLimits()">Xóa Ngưỡng</button>
+                    
+                    <div class="current-limits">
+                        <p>Ngưỡng Bật: <b id="turn-on-display">Chưa đặt</b></p>
+                        <p>Ngưỡng Tắt: <b id="turn-off-display">Chưa đặt</b></p>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </div>
 

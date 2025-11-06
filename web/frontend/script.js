@@ -1,33 +1,126 @@
-// --- MQTT CONFIG ---
+
+// --- MQTT CONFIG & API CONFIG ---
 const broker = "wss://09db723ea0574876a727418f489b0600.s1.eu.hivemq.cloud:8884/mqtt";
-const options = {
-    username: "relay1",
-    password: "Dai24102004@#",
-};
+const options = { username: "relay1", password: "Dai24102004@#" };
 const client = mqtt.connect(broker, options);
 
 const topicCmd = "home/relay1/cmd";
 const topicStatus = "home/relay1/status";
+const topicDistance = "home/relay1/distance";
+const API_URL = "http://localhost:3000";
 
-// --- API CONFIG ---
-const API_URL = "http://localhost:3000"; // Địa chỉ backend server của bạn
+// --- BIẾN TRẠNG THÁI ---
+let turnOnDistance = null;
+let turnOffDistance = null;
+let currentDistance = null;
+let lastKnownRelayState = null;
 
-// --- MQTT LOGIC ---
+// --- DOM ELEMENTS ---
+const statusSpan = document.getElementById("status");
+const distanceValueSpan = document.getElementById("distance-value");
+const turnOnInput = document.getElementById("turn-on-distance");
+const turnOffInput = document.getElementById("turn-off-distance");
+const turnOnDisplaySpan = document.getElementById("turn-on-display");
+const turnOffDisplaySpan = document.getElementById("turn-off-display");
+// Xóa biến checkbox vì không còn tồn tại
+// const autoControlToggle = document.getElementById("auto-control-toggle");
+
+// --- LOGIC MQTT ---
 client.on("connect", () => {    
     console.log("Connected to HiveMQ!");
     client.subscribe(topicStatus);
-    document.getElementById("status").innerText = "Connected";
+    client.subscribe(topicDistance);
+    statusSpan.innerText = "Connected";
 });
 
 client.on("message", (topic, message) => {
+    const msgString = message.toString();
     if (topic === topicStatus) {
-        document.getElementById("status").innerText = message.toString();
+        lastKnownRelayState = msgString;
+        statusSpan.innerText = msgString;
+    } else if (topic === topicDistance) {
+        currentDistance = parseFloat(msgString);
+        if (!isNaN(currentDistance)) {
+            distanceValueSpan.innerText = currentDistance.toFixed(2);
+            checkDistanceAndControlRelay();
+        }
     }
 });
 
+// Hàm gửi lệnh MQTT đơn giản
 function sendCmd(cmd) {
     client.publish(topicCmd, cmd);
 }
+
+// --- LOGIC ĐIỀU KHIỂN TỰ ĐỘNG ---
+
+function setLimits() {
+    const onValue = parseFloat(turnOnInput.value);
+    const offValue = parseFloat(turnOffInput.value);
+
+    if (isNaN(onValue) || isNaN(offValue)) {
+        alert("Vui lòng nhập đủ cả hai ngưỡng.");
+        return;
+    }
+    if (onValue >= offValue) {
+        alert("Lỗi: Ngưỡng Bật phải bé hơn Ngưỡng Tắt.\n(Ví dụ: Bật khi <= 10cm, Tắt khi >= 80cm)");
+        return;
+    }
+
+    turnOnDistance = onValue;
+    turnOffDistance = offValue;
+
+    turnOnDisplaySpan.innerText = `≤ ${turnOnDistance} cm`;
+    turnOffDisplaySpan.innerText = `≥ ${turnOffDistance} cm`;
+    console.log(`Đã kích hoạt chế độ tự động. Ngưỡng: Bật ≥ ${turnOnDistance}cm, Tắt ≤ ${turnOffDistance}cm`);
+    
+    checkDistanceAndControlRelay();
+}
+// hàm xóa ngưỡng
+function clearLimits() {
+    // 1. Đặt lại các biến ngưỡng
+    turnOnDistance = null;
+    turnOffDistance = null;
+
+    // 2. Xóa giá trị trong các ô input
+    turnOnInput.value = '';
+    turnOffInput.value = '';
+
+    // 3. Cập nhật lại hiển thị trạng thái ngưỡng
+    turnOnDisplaySpan.innerText = 'Chưa đặt';
+    turnOffDisplaySpan.innerText = 'Chưa đặt';
+
+    // 4. In ra console để thông báo
+    console.log("Đã xóa ngưỡng. Chế độ tự động đã bị vô hiệu hóa.");
+}    
+
+
+function checkDistanceAndControlRelay() {
+    // Bỏ điều kiện kiểm tra checkbox, chỉ cần có ngưỡng là chạy
+    if (turnOnDistance === null || turnOffDistance === null || currentDistance === null) {
+        return;
+    }
+
+    let desiredState = lastKnownRelayState;
+
+    if (currentDistance <= turnOnDistance) {
+        desiredState = 'ON';
+    } else if (currentDistance >= turnOffDistance) {
+        desiredState = 'OFF';
+    }
+
+    if (desiredState !== lastKnownRelayState) {
+        console.log(`Tự động: Khoảng cách ${currentDistance}cm. Ngưỡng [${turnOffDistance}, ${turnOnDistance}]. Đổi trạng thái relay thành ${desiredState}`);
+        // Gửi lệnh mà không cần kiểm tra gì thêm
+        originalSendCmd(desiredState);
+    }
+}
+
+
+const originalSendCmd = sendCmd; 
+
+
+
 
 // --- SCHEDULER UI LOGIC ---
 

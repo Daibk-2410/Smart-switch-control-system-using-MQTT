@@ -1,0 +1,670 @@
+ets Jul 29 2019 12:21:46
+
+r�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2025 09:49:33[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=30378h (197496) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=000403a0 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (158) esp_image: segment 2: paddr=000403c4 vaddr=3ffb0000 size=03f10h ( 16144) load[0m
+[0;32mI (168) esp_image: segment 3: paddr=000442dc vaddr=40080000 size=0bd3ch ( 48444) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=9f784h (653188) map[0m
+[0;32mI (412) esp_image: segment 5: paddr=000ef7ac vaddr=4008bd3c size=0ca44h ( 51780) load[0m
+[0;32mI (444) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (444) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+[0;32mI (463) cpu_start: Pro cpu start user code[0m
+[0;32mI (463) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) app_init: Application information:[0m
+[0;32mI (463) app_init: Project name:     blink[0m
+[0;32mI (466) app_init: App version:      4ff6662-dirty[0m
+[0;32mI (471) app_init: Compile time:     Oct 18 2025 16:56:51[0m
+[0;32mI (476) app_init: ELF file SHA256:  c4907c77b...[0m
+[0;32mI (480) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (485) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (488) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (492) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (497) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (503) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (508) heap_init: At 3FFB87A0 len 00027860 (158 KiB): DRAM[0m
+[0;32mI (513) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (518) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 40098780 len 00007880 (30 KiB): IRAM[0m
+[0;32mI (531) spi_flash: detected chip: generic[0m
+[0;32mI (533) spi_flash: flash io: dio[0m
+[0;33mW (536) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (549) main_task: Started on CPU0[0m
+[0;32mI (559) main_task: Calling app_main()[0m
+[0;32mI (579) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (579) UART_SENSOR: UART sensor driver initialized.[0m
+[0;32mI (589) wifi:wifi driver task: 3ffc10d0, prio:23, stack:6656, core=0[0m
+[0;32mI (599) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (599) wifi:wifi certification version: v7.0[0m
+[0;32mI (599) wifi:config NVS flash: enabled[0m
+[0;32mI (599) wifi:config nano formatting: disabled[0m
+[0;32mI (609) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (609) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (619) wifi:Init management short buffer num: 32[0m
+[0;32mI (619) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (619) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (629) wifi:Init static rx buffer num: 10[0m
+[0;32mI (629) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (639) wifi_init: rx ba win: 6[0m
+[0;32mI (639) wifi_init: accept mbox: 6[0m
+[0;32mI (639) wifi_init: tcpip mbox: 32[0m
+[0;32mI (639) wifi_init: udp mbox: 6[0m
+[0;32mI (649) wifi_init: tcp mbox: 6[0m
+[0;32mI (649) wifi_init: tcp tx win: 5760[0m
+[0;32mI (649) wifi_init: tcp rx win: 5760[0m
+[0;32mI (659) wifi_init: tcp mss: 1440[0m
+[0;32mI (659) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (659) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (669) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (679) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (759) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (779) wifi:mode : sta (20:43:a8:e5:4d:4c)[0m
+[0;32mI (779) wifi:enable tsf[0m
+[0;32mI (789) WiFi: Connecting to WiFi...[0m
+[0;32mI (809) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (819) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (839) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (899) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (999) wifi:connected with Tro 1, aid = 8, channel 7, BW20, bssid = 4c:12:e8:40:45:30[0m
+[0;32mI (999) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (999) wifi:pm start, type: 1[0m
+
+[0;32mI (999) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1039) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2259) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2259) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (4789) MQTT: 🔌 MQTT client started[0m
+[0;32mI (4799) wifi:<ba-add>idx:0 (ifx:0, 4c:12:e8:40:45:30), tid:0, ssn:5, winSize:64[0m
+[0;32mI (5249) wifi:<ba-add>idx:1 (ifx:0, 4c:12:e8:40:45:30), tid:1, ssn:0, winSize:64[0m
+[0;32mI (5719) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (6789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (7299) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (8789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (10789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (12789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (14789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (16789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (18789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (20789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (22789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (24789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (26789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (28789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (30789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (32789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (34789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (36789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (38789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (40789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (42789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (44789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (46789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (48789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (50789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (52789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (54789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (56789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (58789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (60789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (62789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (64789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (66789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (68789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (70789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (72789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (74789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (76789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (78789) MAIN: Distance: -1.00 cm[0m
+[0;32mI (80889) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (82989) MAIN: Distance: -1.00 cm
+[0;32mI (85089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (87089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (89089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (91089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (93089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (95089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (97089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (99089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (101089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (103089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (105089) MAIN: Distance: -1.00 cm
+[0;32mI (107089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (109089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (111089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (113089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (115089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (117089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (119089) MAIN: Distance: -1.00 cm
+[0;32mI (121089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (123089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (125089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (127089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (129089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (131089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (133089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (135089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (137089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (139089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (141089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (142679) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (143089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (143489) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (145089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (147089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (149089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (151089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (153089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (155089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (157089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (159089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (161089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (163089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (165089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (167089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (169089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (171089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (173089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (175089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (177089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (179089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (181089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (183089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (185089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (187089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (189089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (191089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (193089) MAIN: Distance: -1.00 cm
+[0;32mI (195089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (197089) MAIN: Distance: -1.00 cm
+[0;32mI (199089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (201089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (203089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (205089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (207089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (209089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (211089) MAIN: Distance: -1.00 cm
+[0;32mI (213089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (215089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (217089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (219089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (221089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (223089) MAIN: Distance: -1.00 cm
+���������������������������������������������������������������� (225089) MAIN: Distance: -1.00 cm
+[0;32mI (227089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (229089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (231089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (233089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (235089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (237089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (239089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (241089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (243089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (245089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (247089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (249089) MAIN: Distance: -1.00 cm
+[0;32mI (251089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (253089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (255089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (257089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (259089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (261089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (263089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (265089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (267089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (269089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (271089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (273089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (275089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (277089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (279089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (281089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (283089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (285089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (287089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (289089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (291089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (293089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (295089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (297089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (299089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (301089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (303089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (305089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (307089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (309089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (311089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (313089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (315089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (317089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (319089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (321089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (323089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (325089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (327089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (329089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (331089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (333089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (335089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (337089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (339089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (341089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (343089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (345089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (347089) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (349089) MAIN: Distance: -1.00 cm
+[0;32mI (351089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (353089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (355089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (357089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (359089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (361089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (363089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (365089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (367089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (369089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (371089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (373089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (375089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (377089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (379089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (381089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (383089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (385089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (387089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (389089) MAIN: Distance: -1.00 cm[0m
+[0;32mI (391089) MAIN: Distance: -1.00 cm[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2025 09:49:33[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=30378h (197496) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=000403a0 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (158) esp_image: segment 2: paddr=000403c4 vaddr=3ffb0000 size=03f10h ( 16144) load[0m
+[0;32mI (168) esp_image: segment 3: paddr=000442dc vaddr=40080000 size=0bd3ch ( 48444) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=9f784h (653188) map[0m
+[0;32mI (412) esp_image: segment 5: paddr=000ef7ac vaddr=4008bd3c size=0ca44h ( 51780) load[0m
+[0;32mI (444) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (444) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+[0;32mI (463) cpu_start: Pro cpu start user code[0m
+[0;32mI (463) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (463) app_init: Application information:[0m
+[0;32mI (463) app_init: Project name:     blink[0m
+[0;32mI (466) app_init: App version:      4ff6662-dirty[0m
+[0;32mI (471) app_init: Compile time:     Oct 18 2025 16:56:51[0m
+[0;32mI (476) app_init: ELF file SHA256:  c4907c77b...[0m
+[0;32mI (480) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (485) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (488) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (492) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (497) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (503) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (508) heap_init: At 3FFB87A0 len 00027860 (158 KiB): DRAM[0m
+[0;32mI (513) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (518) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 40098780 len 00007880 (30 KiB): IRAM[0m
+[0;32mI (531) spi_flash: detected chip: generic[0m
+[0;32mI (533) spi_flash: flash io: dio[0m
+[0;33mW (536) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (549) main_task: Started on CPU0[0m
+[0;32mI (559) main_task: Calling app_main()[0m
+[0;32mI (579) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (579) UART_SENSOR: UART sensor driver initialized.[0m
+[0;32mI (589) wifi:wifi driver task: 3ffc104c, prio:23, stack:6656, core=0[0m
+[0;32mI (599) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (599) wifi:wifi certification version: v7.0[0m
+[0;32mI (599) wifi:config NVS flash: enabled[0m
+[0;32mI (599) wifi:config nano formatting: disabled[0m
+[0;32mI (609) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (609) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (609) wifi:Init management short buffer num: 32[0m
+[0;32mI (619) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (619) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (629) wifi:Init static rx buffer num: 10[0m
+[0;32mI (629) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (639) wifi_init: rx ba win: 6[0m
+[0;32mI (639) wifi_init: accept mbox: 6[0m
+[0;32mI (639) wifi_init: tcpip mbox: 32[0m
+[0;32mI (639) wifi_init: udp mbox: 6[0m
+[0;32mI (649) wifi_init: tcp mbox: 6[0m
+[0;32mI (649) wifi_init: tcp tx win: 5760[0m
+[0;32mI (649) wifi_init: tcp rx win: 5760[0m
+[0;32mI (659) wifi_init: tcp mss: 1440[0m
+[0;32mI (659) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (659) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (669) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (679) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (759) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (829) wifi:mode : sta (20:43:a8:e5:4d:4c)[0m
+[0;32mI (829) wifi:enable tsf[0m
+[0;32mI (829) WiFi: Connecting to WiFi...[0m
+[0;32mI (849) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (859) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (899) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (939) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1049) wifi:connected with Tro 1, aid = 7, channel 7, BW20, bssid = 4c:12:e8:40:45:30[0m
+[0;32mI (1049) wifi:security: WPA2-PSK, phy: bgn, rssi: -50[0m
+[0;32mI (1049) wifi:pm start, type: 1[0m
+
+[0;32mI (1049) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1129) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2249) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2249) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (4829) MQTT: 🔌 MQTT client started[0m
+[0;32mI (4849) wifi:<ba-add>idx:0 (ifx:0, 4c:12:e8:40:45:30), tid:0, ssn:5, winSize:64[0m
+[0;32mI (5339) wifi:<ba-add>idx:1 (ifx:0, 4c:12:e8:40:45:30), tid:1, ssn:0, winSize:64[0m
+[0;32mI (5749) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (6829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (7289) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (8829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (10829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (12829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (14829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (16829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (18829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (20829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (22829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (24829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (26829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (28829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (30829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (32829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (34829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (36829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (38829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (40829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (42829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (44829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (46829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (48829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (50829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (52829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (54829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (56829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (58829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (60829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (62829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (64829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (66829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (68829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (70829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (72829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (74829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (76829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (78829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (80829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (82829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (84829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (86829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (88829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (90829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (92829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (94829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (96829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (98829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (100829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (102829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (104829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (106829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (108829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (110829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (112829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (114829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (116829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (118829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (120829) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (122829) MAIN: Distance: -1.00 cm
+[0;32mI (124829) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (126829) MAIN: Distance: -1.00 cm
+[0;32mI (128829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (130829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (132829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (134829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (136829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (138829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (140829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (142829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (144829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (146829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (148829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (150829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (152829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (154829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (156829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (158829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (160829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (162829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (164829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (166829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (168829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (170829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (172829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (174829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (176829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (178829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (180829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (182829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (184829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (186829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (188829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (190829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (192829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (194829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (196829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (198829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (200829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (202829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (204829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (206829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (208829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (210829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (212829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (214829) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (216829) MAIN: Distance: -1.00 cm
+[0;32mI (218829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (220829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (222829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (224829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (226829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (228829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (230829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (232829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (234829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (236829) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (238829) MAIN: Distance: -1.00 cm
+[0;32mI (240829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (242829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (244829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (246829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (248829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (250829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (252829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (254829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (256829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (258829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (260829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (262829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (264829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (266829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (268829) MAIN: Distance: -1.00 cm[0m
+[0;32mI (270919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (272919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (274919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (276919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (278919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (280919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (282919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (284919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (286919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (288919) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (290919) MAIN: Distance: -1.00 cm
+[0;32mI (292919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (294919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (296919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (298919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (300919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (302919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (304919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (306919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (308919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (310919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (312919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (315019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (317019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (319119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (321219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (323319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (325419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (327519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (329619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (331719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (333719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (335719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (337719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (339719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (341719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (343719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (345719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (347819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (349819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (351919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (354019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (356119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (358219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (360319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (362419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (364519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (366619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (368719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (370819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (372919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (375019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (377119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (379219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (381319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (383419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (385519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (387619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (389719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (391819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (393919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (396019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (398119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (400219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (402319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (404419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (406519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (408619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (410719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (412819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (414919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (417019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (419119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (421219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (423319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (425419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (427519) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (429619) MAIN: Distance: -1.00 cm
+[0;32mI (431719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (433819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (435919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (438019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (440119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (442219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (444319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (446419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (448519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (450619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (452719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (454819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (456919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (459019) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (461119) MAIN: Distance: -1.00 cm
+[0;32mI (463219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (465319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (467419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (469519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (471619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (473719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (475819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (477919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (480019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (482119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (484219) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (486319) MAIN: Distance: -1.00 cm
+[0;32mI (488419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (490519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (492619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (494719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (496819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (498919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (501019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (503119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (505219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (507319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (509419) MAIN: Distance: -1.00 cm[0m
+���������������������������������������������������������������� (511519) MAIN: Distance: -1.00 cm
+[0;32mI (513619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (515719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (517819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (519919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (522019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (524119) MAIN: Distance: -1.00 cm[0m
+[0;32mI (526219) MAIN: Distance: -1.00 cm[0m
+[0;32mI (528319) MAIN: Distance: -1.00 cm[0m
+[0;32mI (530419) MAIN: Distance: -1.00 cm[0m
+[0;32mI (532519) MAIN: Distance: -1.00 cm[0m
+[0;32mI (534619) MAIN: Distance: -1.00 cm[0m
+[0;32mI (536719) MAIN: Distance: -1.00 cm[0m
+[0;32mI (538819) MAIN: Distance: -1.00 cm[0m
+[0;32mI (540919) MAIN: Distance: -1.00 cm[0m
+[0;32mI (543019) MAIN: Distance: -1.00 cm[0m
+[0;32mI (545119) MAIN: Distance: -1.00 cm[0m
