@@ -1,22 +1,22 @@
-// ===== server.js =====
+require('dotenv').config();
 
 const express = require('express');
 const mysql = require('mysql2/promise');
 const mqtt = require('mqtt');
 const cors = require('cors');
 
-// --- CẤU HÌNH ---
+// --- CẤU HÌNH (Đọc từ file .env) ---
 const MYSQL_CONFIG = {
-    host: 'localhost',      // Địa chỉ MySQL server
-    user: 'root',           // Username MySQL
-    password: 'Dai24102004@#', // Password MySQL
-    database: 'iot_project' // Tên database
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 };
 
-const MQTT_BROKER = "wss://09db723ea0574876a727418f489b0600.s1.eu.hivemq.cloud:8884/mqtt";
+const MQTT_BROKER = process.env.MQTT_BROKER_URL;
 const MQTT_OPTIONS = {
-    username: "relay1",     // Dùng username/password giống ESP32 hoặc tạo user mới
-    password: "Dai24102004@#"
+    username: process.env.MQTT_USERNAME,
+    password: process.env.MQTT_PASSWORD
 };
 const MQTT_TOPIC_CMD = "home/relay1/cmd";
 
@@ -36,7 +36,7 @@ mqttClient.on('connect', () => {
 
 // Biến để theo dõi trạng thái relay do lịch trình điều khiển
 // Giúp tránh gửi lệnh lặp đi lặp lại
-let lastStateByScheduler = null; 
+let lastStateByScheduler = null;
 
 // --- API ENDPOINTS ---
 
@@ -82,7 +82,7 @@ app.delete('/schedules/:id', async (req, res) => {
 async function checkSchedules() {
     try {
         const [schedules] = await dbConnection.query('SELECT start_time, end_time FROM schedules WHERE is_enabled = TRUE');
-        
+
         const now = new Date();
         const currentTime = now.toTimeString().slice(0, 8); // Format HH:MM:SS
 
@@ -95,7 +95,7 @@ async function checkSchedules() {
         }
 
         const desiredState = relayShouldBeOn ? 'ON' : 'OFF';
-        
+
         // Chỉ gửi lệnh nếu trạng thái mong muốn khác với trạng thái cuối cùng
         if (desiredState !== lastStateByScheduler) {
             console.log(`⏰ Time: ${currentTime}, Desired state: ${desiredState}. Sending command...`);

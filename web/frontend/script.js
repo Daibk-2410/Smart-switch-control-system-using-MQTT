@@ -1,13 +1,16 @@
 
-// --- MQTT CONFIG & API CONFIG ---
-const broker = "wss://09db723ea0574876a727418f489b0600.s1.eu.hivemq.cloud:8884/mqtt";
-const options = { username: "relay1", password: "Dai24102004@#" };
+// --- MQTT CONFIG (Đọc từ file config.js) ---
+const broker = CONFIG.MQTT_BROKER_URL;
+const options = {
+    username: CONFIG.MQTT_USERNAME,
+    password: CONFIG.MQTT_PASSWORD,
+};
 const client = mqtt.connect(broker, options);
 
 const topicCmd = "home/relay1/cmd";
 const topicStatus = "home/relay1/status";
 const topicDistance = "home/relay1/distance";
-const API_URL = "http://localhost:3000";
+const API_URL = CONFIG.API_URL;
 
 // --- BIẾN TRẠNG THÁI ---
 let turnOnDistance = null;
@@ -26,7 +29,7 @@ const turnOffDisplaySpan = document.getElementById("turn-off-display");
 // const autoControlToggle = document.getElementById("auto-control-toggle");
 
 // --- LOGIC MQTT ---
-client.on("connect", () => {    
+client.on("connect", () => {
     console.log("Connected to HiveMQ!");
     client.subscribe(topicStatus);
     client.subscribe(topicDistance);
@@ -73,7 +76,7 @@ function setLimits() {
     turnOnDisplaySpan.innerText = `≤ ${turnOnDistance} cm`;
     turnOffDisplaySpan.innerText = `≥ ${turnOffDistance} cm`;
     console.log(`Đã kích hoạt chế độ tự động. Ngưỡng: Bật ≥ ${turnOnDistance}cm, Tắt ≤ ${turnOffDistance}cm`);
-    
+
     checkDistanceAndControlRelay();
 }
 // hàm xóa ngưỡng
@@ -92,7 +95,7 @@ function clearLimits() {
 
     // 4. In ra console để thông báo
     console.log("Đã xóa ngưỡng. Chế độ tự động đã bị vô hiệu hóa.");
-}    
+}
 
 
 function checkDistanceAndControlRelay() {
@@ -117,7 +120,7 @@ function checkDistanceAndControlRelay() {
 }
 
 
-const originalSendCmd = sendCmd; 
+const originalSendCmd = sendCmd;
 
 
 
@@ -129,10 +132,10 @@ async function fetchSchedules() {
     try {
         const response = await fetch(`${API_URL}/schedules`);
         const schedules = await response.json();
-        
+
         const list = document.getElementById('schedule-list');
         list.innerHTML = ''; // Xóa danh sách cũ
-        
+
         schedules.forEach(sch => {
             const li = document.createElement('li');
             li.innerHTML = `
@@ -149,7 +152,7 @@ async function fetchSchedules() {
 // Hàm thêm lịch mới
 async function addSchedule(event) {
     event.preventDefault(); // Ngăn form submit theo cách truyền thống
-    
+
     const startTime = document.getElementById('start_time').value;
     const endTime = document.getElementById('end_time').value;
 

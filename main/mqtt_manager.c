@@ -29,9 +29,9 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
         break;
 
     case MQTT_EVENT_DATA:
-        ` ESP_LOGI(TAG, "Message on %.*s: %.*s",
-                   event->topic_len, event->topic,
-                   event->data_len, event->data);
+        ESP_LOGI(TAG, "Message on %.*s: %.*s",
+                 event->topic_len, event->topic,
+                 event->data_len, event->data);
 
         if (strncmp(event->data, "ON", event->data_len) == 0)
         {

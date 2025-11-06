@@ -1,0 +1,5 @@
+# Bỏ qua các file biến môi trường
+backend-server/.env
+
+# Bỏ qua thư mục node_modules
+backend-server/node_modules/

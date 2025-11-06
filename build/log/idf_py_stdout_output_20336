@@ -1,0 +1,1168 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (PO�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2025 09:49:33[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2f428h (193576) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=0003f450 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=0003f474 vaddr=3ffb0000 size=00ba4h (  2980) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9d458h (644184) map[0m
+[0;32mI (388) esp_image: segment 4: paddr=000dd480 vaddr=3ffb0ba4 size=0336ch ( 13164) load[0m
+[0;32mI (393) esp_image: segment 5: paddr=000e07f4 vaddr=40080000 size=178d4h ( 96468) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (442) boot: Disabling RNG early entropy source...[0m
+[0;32mI (453) cpu_start: Multicore app[0m
+[0;32mI (461) cpu_start: Pro cpu start user code[0m
+[0;32mI (461) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (461) app_init: Application information:[0m
+[0;32mI (461) app_init: Project name:     blink[0m
+[0;32mI (465) app_init: App version:      f5bcd05-dirty[0m
+[0;32mI (469) app_init: Compile time:     Nov  6 2025 23:18:28[0m
+[0;32mI (474) app_init: ELF file SHA256:  5e47cdc37...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (483) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (487) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (491) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (495) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (501) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (506) heap_init: At 3FFB87A8 len 00027858 (158 KiB): DRAM[0m
+[0;32mI (511) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (517) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (522) heap_init: At 400978D4 len 0000872C (33 KiB): IRAM[0m
+[0;32mI (529) spi_flash: detected chip: generic[0m
+[0;32mI (531) spi_flash: flash io: dio[0m
+[0;33mW (534) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (577) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (607) wifi:wifi driver task: 3ffc06fc, prio:23, stack:6656, core=0[0m
+[0;32mI (617) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (617) wifi:wifi certification version: v7.0[0m
+[0;32mI (617) wifi:config NVS flash: enabled[0m
+[0;32mI (617) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (627) wifi:Init management short buffer num: 32[0m
+[0;32mI (637) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (637) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (647) wifi:Init static rx buffer num: 10[0m
+[0;32mI (647) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (657) wifi_init: accept mbox: 6[0m
+[0;32mI (657) wifi_init: tcpip mbox: 32[0m
+[0;32mI (657) wifi_init: udp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp tx win: 5760[0m
+[0;32mI (667) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (677) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (677) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (687) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (697) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (787) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (857) wifi:mode : sta (20:43:a8:e5:4d:4c)[0m
+[0;32mI (857) wifi:enable tsf[0m
+[0;32mI (857) WiFi: Connecting to WiFi...[0m
+[0;33mW (3277) WiFi: WiFi disconnected, reconnecting...[0m
+[1;31mE (4857) esp-tls: couldn't get hostname for :09db723ea0574876a727418f489b0600.s1.eu.hivemq.cloud: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (4857) esp-tls: Failed to open new connection[0m
+[1;31mE (4857) transport_base: Failed to open a new connection[0m
+[1;31mE (4867) mqtt_client: Error transport connect[0m
+[1;31mE (4867) MQTT: ❌ MQTT connection error![0m
+[0;32mI (4877) MQTT: 🔌 MQTT client started[0m
+[0;33mW (5687) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (6887) MAIN: Distance: 54.71 cm[0m
+[0;33mW (8107) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (8897) MAIN: Distance: 54.66 cm[0m
+[0;33mW (10517) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (10907) MAIN: Distance: 54.66 cm[0m
+[0;32mI (12917) MAIN: Distance: 54.60 cm[0m
+[0;33mW (12937) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (14927) MAIN: Distance: 54.60 cm[0m
+[0;33mW (15347) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (16937) MAIN: Distance: 54.60 cm[0m
+[0;33mW (17767) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (18947) MAIN: Distance: 54.60 cm[0m
+[1;31mE (19877) esp-tls: couldn't get hostname for :09db723ea0574876a727418f489b0600.s1.eu.hivemq.cloud: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (19877) esp-tls: Failed to open new connection[0m
+[1;31mE (19877) transport_base: Failed to open a new connection[0m
+[1;31mE (19887) mqtt_client: Error transport connect[0m
+[1;31mE (19887) MQTT: ❌ MQTT connection error![0m
+[0;33mW (20187) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (20957) MAIN: Distance: 54.60 cm[0m
+[0;33mW (22597) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (22967) MAIN: Distance: 66.87 cm[0m
+[0;32mI (24977) MAIN: Distance: 54.59 cm[0m
+[0;33mW (25017) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (26987) MAIN: Distance: 54.60 cm[0m
+[0;33mW (27427) WiFi: WiFi disconnected, reconnecting...[0m
+[0;32mI (27507) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (27517) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (27527) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (27537) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (27577) wifi:connected with Haayf, aid = 1, channel 6, BW20, bssid = da:f2:29:af:29:bf[0m
+[0;32mI (27577) wifi:security: WPA2-PSK, phy: bgn, rssi: -35[0m
+[0;32mI (27587) wifi:pm start, type: 1[0m
+
+[0;32mI (27587) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (27597) wifi:<ba-add>idx:0 (ifx:0, da:f2:29:af:29:bf), tid:0, ssn:0, winSize:64[0m
+[0;32mI (27607) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (27607) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (28627) esp_netif_handlers: sta ip: 192.168.102.137, mask: 255.255.255.0, gw: 192.168.102.238[0m
+[0;32mI (28627) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (28997) MAIN: Distance: 54.60 cm[0m
+[0;32mI (31007) MAIN: Distance: 54.72 cm[0m
+[0;32mI (33017) MAIN: Distance: 54.72 cm[0m
+[0;32mI (35027) MAIN: Distance: 54.71 cm[0m
+[0;32mI (36077) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (37747) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (39767) MAIN: Distance: 54.72 cm[0m
+[0;32mI (41777) MAIN: Distance: 54.71 cm[0m
+[0;32mI (43787) MAIN: Distance: 54.71 cm[0m
+[0;32mI (45807) MAIN: Distance: 54.71 cm[0m
+[0;32mI (47827) MAIN: Distance: 54.66 cm[0m
+[0;32mI (49847) MAIN: Distance: 54.67 cm[0m
+[0;32mI (51867) MAIN: Distance: 54.71 cm[0m
+[0;32mI (53887) MAIN: Distance: 54.72 cm[0m
+[0;32mI (55907) MAIN: Distance: 54.67 cm[0m
+[0;32mI (57927) MAIN: Distance: 54.66 cm[0m
+[0;32mI (59947) MAIN: Distance: 54.66 cm[0m
+[0;32mI (61967) MAIN: Distance: 54.66 cm[0m
+[0;32mI (63987) MAIN: Distance: 54.66 cm[0m
+[0;32mI (66007) MAIN: Distance: 54.66 cm[0m
+[0;32mI (68027) MAIN: Distance: 54.66 cm[0m
+[0;32mI (70047) MAIN: Distance: 54.71 cm[0m
+[0;32mI (72067) MAIN: Distance: 54.71 cm[0m
+[0;32mI (74087) MAIN: Distance: 54.67 cm[0m
+[0;32mI (76107) MAIN: Distance: 54.72 cm[0m
+[0;32mI (78127) MAIN: Distance: 54.71 cm[0m
+[0;32mI (80147) MAIN: Distance: 54.72 cm[0m
+[0;32mI (82167) MAIN: Distance: 54.67 cm[0m
+[0;32mI (84187) MAIN: Distance: 54.67 cm[0m
+[0;32mI (86207) MAIN: Distance: 54.67 cm[0m
+[0;32mI (88227) MAIN: Distance: 54.72 cm[0m
+[0;32mI (90247) MAIN: Distance: 54.67 cm[0m
+[0;32mI (92267) MAIN: Distance: 54.66 cm[0m
+[0;32mI (94287) MAIN: Distance: 54.72 cm[0m
+[0;32mI (96307) MAIN: Distance: 54.66 cm[0m
+[0;32mI (98327) MAIN: Distance: 54.67 cm[0m
+[0;32mI (100347) MAIN: Distance: 54.60 cm[0m
+[0;32mI (102367) MAIN: Distance: 54.67 cm[0m
+[0;32mI (104387) MAIN: Distance: 54.60 cm[0m
+[0;32mI (106407) MAIN: Distance: 54.60 cm[0m
+[0;32mI (108427) MAIN: Distance: 54.62 cm[0m
+[0;32mI (110447) MAIN: Distance: 54.60 cm[0m
+[0;32mI (112467) MAIN: Distance: 54.67 cm[0m
+[0;32mI (114487) MAIN: Distance: 54.66 cm[0m
+[0;32mI (116507) MAIN: Distance: 54.67 cm[0m
+[0;32mI (118527) MAIN: Distance: 54.71 cm[0m
+[0;32mI (120547) MAIN: Distance: 54.72 cm[0m
+[0;32mI (122567) MAIN: Distance: 54.74 cm[0m
+[0;32mI (124587) MAIN: Distance: 54.72 cm[0m
+[0;32mI (126607) MAIN: Distance: 54.66 cm[0m
+[0;32mI (128627) MAIN: Distance: 54.66 cm[0m
+[0;32mI (130647) MAIN: Distance: 54.71 cm[0m
+[0;32mI (132667) MAIN: Distance: 54.67 cm[0m
+���������������������������������������������������������������� (134687) MAIN: Distance: 54.72 cm
+[0;32mI (136707) MAIN: Distance: 54.67 cm[0m
+[0;32mI (138727) MAIN: Distance: 54.67 cm[0m
+[0;32mI (140747) MAIN: Distance: 54.72 cm[0m
+[0;32mI (142767) MAIN: Distance: 54.71 cm[0m
+[0;32mI (144787) MAIN: Distance: 54.72 cm[0m
+[0;32mI (146807) MAIN: Distance: 54.67 cm[0m
+[0;32mI (148827) MAIN: Distance: 54.72 cm[0m
+[0;32mI (150847) MAIN: Distance: 54.72 cm[0m
+[0;32mI (152867) MAIN: Distance: 54.72 cm[0m
+[0;32mI (154887) MAIN: Distance: 54.72 cm[0m
+[0;32mI (156907) MAIN: Distance: 54.66 cm[0m
+[0;32mI (158927) MAIN: Distance: 54.66 cm[0m
+[0;32mI (160947) MAIN: Distance: 54.67 cm[0m
+[0;32mI (162967) MAIN: Distance: 54.66 cm[0m
+[0;32mI (164987) MAIN: Distance: 54.72 cm[0m
+[0;32mI (167007) MAIN: Distance: 54.67 cm[0m
+[0;32mI (169027) MAIN: Distance: 54.66 cm[0m
+[0;32mI (171047) MAIN: Distance: 54.72 cm[0m
+[0;32mI (173067) MAIN: Distance: 54.67 cm[0m
+[0;32mI (175087) MAIN: Distance: 54.67 cm[0m
+[0;32mI (177107) MAIN: Distance: 54.72 cm[0m
+[0;32mI (179127) MAIN: Distance: 54.72 cm[0m
+[0;32mI (181147) MAIN: Distance: 54.72 cm[0m
+[0;32mI (183167) MAIN: Distance: 54.72 cm[0m
+���������������������������������������������������������������� (185187) MAIN: Distance: 54.72 cm
+[0;32mI (187207) MAIN: Distance: 54.67 cm[0m
+[0;32mI (189227) MAIN: Distance: 54.66 cm[0m
+[0;32mI (191247) MAIN: Distance: 54.72 cm[0m
+[0;32mI (193267) MAIN: Distance: 54.72 cm[0m
+[0;32mI (195287) MAIN: Distance: 54.74 cm[0m
+[0;32mI (197307) MAIN: Distance: 54.72 cm[0m
+[0;32mI (199327) MAIN: Distance: 54.71 cm[0m
+[0;32mI (201347) MAIN: Distance: 54.72 cm[0m
+[0;32mI (203367) MAIN: Distance: 54.72 cm[0m
+[0;32mI (205387) MAIN: Distance: 54.74 cm[0m
+[0;32mI (207407) MAIN: Distance: 54.72 cm[0m
+[0;32mI (209427) MAIN: Distance: 54.72 cm[0m
+[0;32mI (211447) MAIN: Distance: 54.72 cm[0m
+[0;32mI (213467) MAIN: Distance: 47.61 cm[0m
+[0;32mI (215487) MAIN: Distance: 54.67 cm[0m
+[0;32mI (217507) MAIN: Distance: 54.72 cm[0m
+[0;32mI (219527) MAIN: Distance: 54.72 cm[0m
+[0;32mI (221547) MAIN: Distance: 54.66 cm[0m
+[0;32mI (223567) MAIN: Distance: 54.72 cm[0m
+[0;32mI (225587) MAIN: Distance: 54.72 cm[0m
+[0;32mI (227607) MAIN: Distance: 54.66 cm[0m
+[0;32mI (229627) MAIN: Distance: 54.66 cm[0m
+[0;32mI (231647) MAIN: Distance: 54.66 cm[0m
+[0;32mI (233667) MAIN: Distance: 54.67 cm[0m
+[0;32mI (235687) MAIN: Distance: 54.72 cm[0m
+[0;32mI (237707) MAIN: Distance: 54.72 cm[0m
+[0;32mI (239727) MAIN: Distance: 54.72 cm[0m
+[0;32mI (241747) MAIN: Distance: 54.72 cm[0m
+[0;32mI (243767) MAIN: Distance: 54.72 cm[0m
+[0;32mI (245787) MAIN: Distance: 54.72 cm[0m
+[0;32mI (247807) MAIN: Distance: 54.66 cm[0m
+[0;32mI (249827) MAIN: Distance: 54.60 cm[0m
+[0;32mI (251847) MAIN: Distance: 54.72 cm[0m
+[0;32mI (253867) MAIN: Distance: 54.72 cm[0m
+[0;32mI (255887) MAIN: Distance: 54.72 cm[0m
+[0;32mI (257907) MAIN: Distance: 57.37 cm[0m
+[0;32mI (259927) MAIN: Distance: 54.72 cm[0m
+[0;32mI (261417) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (261947) MAIN: Distance: 54.72 cm[0m
+[0;32mI (263967) MAIN: Distance: 54.67 cm[0m
+[0;32mI (265987) MAIN: Distance: 54.67 cm[0m
+[0;32mI (268007) MAIN: Distance: 54.67 cm[0m
+[0;32mI (270027) MAIN: Distance: 54.71 cm[0m
+[0;32mI (272047) MAIN: Distance: 54.72 cm[0m
+[0;32mI (274067) MAIN: Distance: 54.67 cm[0m
+[0;32mI (276087) MAIN: Distance: 54.60 cm[0m
+[0;32mI (278107) MAIN: Distance: 54.66 cm[0m
+[0;32mI (280127) MAIN: Distance: 54.72 cm[0m
+���������������������������������������������������������������� (282147) MAIN: Distance: 54.72 cm
+[0;32mI (284167) MAIN: Distance: 54.72 cm[0m
+[0;32mI (286187) MAIN: Distance: 54.66 cm[0m
+[0;32mI (288207) MAIN: Distance: 54.72 cm[0m
+[0;32mI (290227) MAIN: Distance: 55.10 cm[0m
+[0;32mI (292247) MAIN: Distance: 54.67 cm[0m
+[0;32mI (294267) MAIN: Distance: 55.08 cm[0m
+[0;32mI (296287) MAIN: Distance: 54.60 cm[0m
+[0;32mI (298307) MAIN: Distance: 54.66 cm[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2025 09:49:33[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2f428h (193576) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=0003f450 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=0003f474 vaddr=3ffb0000 size=00ba4h (  2980) load[0m
+[0;32mI (162) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9d458h (644184) map[0m
+[0;32mI (388) esp_image: segment 4: paddr=000dd480 vaddr=3ffb0ba4 size=0336ch ( 13164) load[0m
+[0;32mI (393) esp_image: segment 5: paddr=000e07f4 vaddr=40080000 size=178d4h ( 96468) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (442) boot: Disabling RNG early entropy source...[0m
+[0;32mI (453) cpu_start: Multicore app[0m
+[0;32mI (461) cpu_start: Pro cpu start user code[0m
+[0;32mI (461) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (461) app_init: Application information:[0m
+[0;32mI (461) app_init: Project name:     blink[0m
+[0;32mI (465) app_init: App version:      f5bcd05-dirty[0m
+[0;32mI (469) app_init: Compile time:     Nov  6 2025 23:18:28[0m
+[0;32mI (474) app_init: ELF file SHA256:  5e47cdc37...[0m
+[0;32mI (479) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (483) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (487) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (491) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (495) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (501) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (506) heap_init: At 3FFB87A8 len 00027858 (158 KiB): DRAM[0m
+[0;32mI (511) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (517) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (522) heap_init: At 400978D4 len 0000872C (33 KiB): IRAM[0m
+I (529) spi_flash: detected chip: generic
+[0;32mI (531) spi_flash: flash io: dio[0m
+[0;33mW (534) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (547) main_task: Started on CPU0[0m
+[0;32mI (557) main_task: Calling app_main()[0m
+[0;32mI (577) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (577) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (607) wifi:wifi driver task: 3ffc0780, prio:23, stack:6656, core=0[0m
+[0;32mI (617) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (617) wifi:wifi certification version: v7.0[0m
+[0;32mI (617) wifi:config NVS flash: enabled[0m
+[0;32mI (617) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (627) wifi:Init management short buffer num: 32[0m
+[0;32mI (637) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (637) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (647) wifi:Init static rx buffer num: 10[0m
+[0;32mI (647) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (657) wifi_init: accept mbox: 6[0m
+[0;32mI (657) wifi_init: tcpip mbox: 32[0m
+[0;32mI (657) wifi_init: udp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp tx win: 5760[0m
+[0;32mI (667) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (677) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (677) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (687) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (697) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (777) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (857) wifi:mode : sta (20:43:a8:e5:4d:4c)[0m
+[0;32mI (857) wifi:enable tsf[0m
+[0;32mI (857) WiFi: Connecting to WiFi...[0m
+[0;32mI (867) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (867) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (877) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (907) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1007) wifi:connected with Haayf, aid = 1, channel 6, BW20, bssid = da:f2:29:af:29:bf[0m
+[0;32mI (1007) wifi:security: WPA2-PSK, phy: bgn, rssi: -6[0m
+[0;32mI (1017) wifi:pm start, type: 1[0m
+
+[0;32mI (1017) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1027) wifi:<ba-add>idx:0 (ifx:0, da:f2:29:af:29:bf), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1077) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1077) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2047) esp_netif_handlers: sta ip: 192.168.102.137, mask: 255.255.255.0, gw: 192.168.102.238[0m
+[0;32mI (2047) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (4857) MQTT: 🔌 MQTT client started[0m
+[0;32mI (6147) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (6867) MAIN: Distance: 54.71 cm[0m
+[0;32mI (8047) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (10067) MAIN: Distance: 54.72 cm[0m
+[0;32mI (12087) MAIN: Distance: 54.72 cm[0m
+[0;32mI (14107) MAIN: Distance: 54.71 cm[0m
+[0;32mI (16127) MAIN: Distance: 54.71 cm[0m
+[0;32mI (18147) MAIN: Distance: 54.72 cm[0m
+[0;32mI (20167) MAIN: Distance: 54.71 cm[0m
+[0;32mI (22187) MAIN: Distance: 54.72 cm[0m
+[0;32mI (24207) MAIN: Distance: 54.71 cm[0m
+[0;32mI (26227) MAIN: Distance: 54.72 cm[0m
+[0;32mI (28247) MAIN: Distance: 54.72 cm[0m
+[0;32mI (30267) MAIN: Distance: 55.07 cm[0m
+[0;32mI (32287) MAIN: Distance: 55.08 cm[0m
+[0;32mI (34307) MAIN: Distance: 55.07 cm[0m
+[0;32mI (36327) MAIN: Distance: 54.72 cm[0m
+[0;32mI (38347) MAIN: Distance: 71.22 cm[0m
+[0;32mI (40367) MAIN: Distance: 54.72 cm[0m
+[0;32mI (42387) MAIN: Distance: 54.71 cm[0m
+���������������������������������������������������������������� (44407) MAIN: Distance: 54.71 cm
+[0;32mI (46427) MAIN: Distance: 55.08 cm[0m
+[0;32mI (48447) MAIN: Distance: 54.72 cm[0m
+[0;32mI (50467) MAIN: Distance: 54.71 cm[0m
+[0;32mI (52487) MAIN: Distance: 54.72 cm[0m
+[0;32mI (54507) MAIN: Distance: 54.72 cm[0m
+[0;32mI (56527) MAIN: Distance: 54.72 cm[0m
+[0;32mI (58547) MAIN: Distance: 54.67 cm[0m
+[0;32mI (60567) MAIN: Distance: 54.72 cm[0m
+[0;32mI (62587) MAIN: Distance: 54.71 cm[0m
+[0;32mI (64607) MAIN: Distance: 54.72 cm[0m
+[0;32mI (66627) MAIN: Distance: 54.72 cm[0m
+[0;32mI (68647) MAIN: Distance: 54.71 cm[0m
+[0;32mI (70667) MAIN: Distance: 54.72 cm[0m
+[0;32mI (72687) MAIN: Distance: 54.72 cm[0m
+[0;32mI (74707) MAIN: Distance: 54.72 cm[0m
+[0;32mI (76727) MAIN: Distance: 55.08 cm[0m
+[0;32mI (78747) MAIN: Distance: 54.72 cm[0m
+[0;32mI (80767) MAIN: Distance: 54.72 cm[0m
+[0;32mI (82787) MAIN: Distance: 44.30 cm[0m
+[0;32mI (84807) MAIN: Distance: 54.72 cm[0m
+[0;32mI (86827) MAIN: Distance: 54.72 cm[0m
+[0;32mI (88847) MAIN: Distance: 54.71 cm[0m
+[0;32mI (90867) MAIN: Distance: 54.72 cm[0m
+[0;32mI (92887) MAIN: Distance: 54.67 cm[0m
+[0;32mI (94907) MAIN: Distance: 54.72 cm[0m
+[0;32mI (96927) MAIN: Distance: 54.71 cm[0m
+[0;32mI (98947) MAIN: Distance: 54.71 cm[0m
+[0;32mI (100967) MAIN: Distance: 54.72 cm[0m
+[0;32mI (102987) MAIN: Distance: 54.71 cm[0m
+[0;32mI (105007) MAIN: Distance: 54.72 cm[0m
+[0;32mI (107027) MAIN: Distance: 54.71 cm[0m
+[0;32mI (109047) MAIN: Distance: 54.72 cm[0m
+[0;32mI (111067) MAIN: Distance: 54.72 cm[0m
+[0;32mI (113087) MAIN: Distance: 54.71 cm[0m
+[0;32mI (115107) MAIN: Distance: 54.72 cm[0m
+[0;32mI (117127) MAIN: Distance: 54.72 cm[0m
+[0;32mI (119147) MAIN: Distance: 54.71 cm[0m
+[0;32mI (121167) MAIN: Distance: 54.72 cm[0m
+[0;32mI (123187) MAIN: Distance: 54.72 cm[0m
+[0;32mI (125207) MAIN: Distance: 54.72 cm[0m
+[0;32mI (127227) MAIN: Distance: 54.71 cm[0m
+[0;32mI (129247) MAIN: Distance: 54.72 cm[0m
+[0;32mI (131267) MAIN: Distance: 54.71 cm[0m
+[0;32mI (133287) MAIN: Distance: 54.71 cm[0m
+[0;32mI (135307) MAIN: Distance: 54.71 cm[0m
+[0;32mI (137327) MAIN: Distance: 54.72 cm[0m
+[0;32mI (139347) MAIN: Distance: 54.72 cm[0m
+[0;32mI (141367) MAIN: Distance: 54.71 cm[0m
+[0;32mI (143387) MAIN: Distance: 54.71 cm[0m
+[0;32mI (145407) MAIN: Distance: 54.71 cm[0m
+[0;32mI (147427) MAIN: Distance: 54.71 cm[0m
+[0;32mI (149447) MAIN: Distance: 54.71 cm[0m
+[0;32mI (151467) MAIN: Distance: 54.71 cm[0m
+[0;32mI (153487) MAIN: Distance: 54.71 cm[0m
+[0;32mI (155507) MAIN: Distance: 54.71 cm[0m
+[0;32mI (157527) MAIN: Distance: 54.71 cm[0m
+[0;32mI (159547) MAIN: Distance: 54.72 cm[0m
+[0;32mI (161567) MAIN: Distance: 54.72 cm[0m
+[0;32mI (163587) MAIN: Distance: 54.71 cm[0m
+[0;32mI (165607) MAIN: Distance: 54.72 cm[0m
+[0;32mI (167627) MAIN: Distance: 54.72 cm[0m
+[0;32mI (169647) MAIN: Distance: 54.71 cm[0m
+[0;32mI (171667) MAIN: Distance: 54.72 cm[0m
+[0;32mI (173687) MAIN: Distance: 54.72 cm[0m
+[0;32mI (175707) MAIN: Distance: 54.72 cm[0m
+[0;32mI (177727) MAIN: Distance: 54.71 cm[0m
+[0;32mI (179747) MAIN: Distance: 54.72 cm[0m
+[0;32mI (181767) MAIN: Distance: 54.71 cm[0m
+[0;32mI (183787) MAIN: Distance: 54.72 cm[0m
+[0;32mI (185807) MAIN: Distance: 54.71 cm[0m
+[0;32mI (187827) MAIN: Distance: 54.72 cm[0m
+[0;32mI (189847) MAIN: Distance: 54.72 cm[0m
+[0;32mI (191867) MAIN: Distance: 54.72 cm[0m
+[0;32mI (193887) MAIN: Distance: 54.71 cm[0m
+[0;32mI (195907) MAIN: Distance: 54.64 cm[0m
+[0;32mI (197927) MAIN: Distance: 54.71 cm[0m
+[0;32mI (199947) MAIN: Distance: 54.71 cm[0m
+[0;32mI (201967) MAIN: Distance: 54.72 cm[0m
+[0;32mI (203987) MAIN: Distance: 54.71 cm[0m
+[0;32mI (206007) MAIN: Distance: 54.72 cm[0m
+[0;32mI (208027) MAIN: Distance: 54.72 cm[0m
+[0;32mI (210047) MAIN: Distance: 54.72 cm[0m
+[0;32mI (212067) MAIN: Distance: 54.71 cm[0m
+[0;32mI (214087) MAIN: Distance: 54.72 cm[0m
+[0;32mI (216107) MAIN: Distance: 54.72 cm[0m
+[0;32mI (218127) MAIN: Distance: 54.71 cm[0m
+[0;32mI (220147) MAIN: Distance: 54.72 cm[0m
+[0;32mI (222167) MAIN: Distance: 54.71 cm[0m
+[0;32mI (224187) MAIN: Distance: 54.71 cm[0m
+[0;32mI (226207) MAIN: Distance: 54.66 cm[0m
+[0;32mI (228227) MAIN: Distance: 54.72 cm[0m
+[0;32mI (230247) MAIN: Distance: 54.71 cm[0m
+[0;32mI (232267) MAIN: Distance: 54.71 cm[0m
+[0;32mI (234287) MAIN: Distance: 54.71 cm[0m
+[0;32mI (236307) MAIN: Distance: 54.71 cm[0m
+[0;32mI (238327) MAIN: Distance: 54.71 cm[0m
+[0;32mI (240347) MAIN: Distance: 54.72 cm[0m
+[0;32mI (242367) MAIN: Distance: 54.72 cm[0m
+[0;32mI (244387) MAIN: Distance: 54.72 cm[0m
+[0;32mI (246407) MAIN: Distance: 54.71 cm[0m
+[0;32mI (248427) MAIN: Distance: 55.07 cm[0m
+[0;32mI (250447) MAIN: Distance: 55.07 cm[0m
+[0;32mI (252467) MAIN: Distance: 54.72 cm[0m
+[0;32mI (254487) MAIN: Distance: 54.72 cm[0m
+[0;32mI (256507) MAIN: Distance: 54.71 cm[0m
+[0;32mI (258527) MAIN: Distance: 54.72 cm[0m
+[0;32mI (260547) MAIN: Distance: 54.72 cm[0m
+[0;32mI (262567) MAIN: Distance: 54.71 cm[0m
+[0;32mI (264587) MAIN: Distance: 54.69 cm[0m
+[0;32mI (266607) MAIN: Distance: 54.72 cm[0m
+[0;32mI (268627) MAIN: Distance: 54.72 cm[0m
+[0;32mI (270647) MAIN: Distance: 54.71 cm[0m
+[0;32mI (272667) MAIN: Distance: 54.71 cm[0m
+[0;32mI (274687) MAIN: Distance: 39.01 cm[0m
+[0;32mI (276707) MAIN: Distance: 54.72 cm[0m
+[0;32mI (278727) MAIN: Distance: 54.71 cm[0m
+[0;32mI (280747) MAIN: Distance: 54.72 cm[0m
+[0;32mI (282767) MAIN: Distance: 54.71 cm[0m
+[0;32mI (284787) MAIN: Distance: 54.71 cm[0m
+[0;32mI (286807) MAIN: Distance: 54.71 cm[0m
+[0;32mI (288827) MAIN: Distance: 54.71 cm[0m
+[0;32mI (290847) MAIN: Distance: 54.71 cm[0m
+[0;32mI (292867) MAIN: Distance: 54.71 cm[0m
+[0;32mI (294887) MAIN: Distance: 54.72 cm[0m
+[0;32mI (296907) MAIN: Distance: 54.71 cm[0m
+[0;32mI (298927) MAIN: Distance: 54.71 cm[0m
+[0;32mI (300947) MAIN: Distance: 54.72 cm[0m
+[0;32mI (302967) MAIN: Distance: 54.72 cm[0m
+[0;32mI (304987) MAIN: Distance: 54.72 cm[0m
+[0;32mI (307007) MAIN: Distance: 54.71 cm[0m
+[0;32mI (309027) MAIN: Distance: 54.71 cm[0m
+[0;32mI (311047) MAIN: Distance: 54.71 cm[0m
+[0;32mI (313067) MAIN: Distance: 54.72 cm[0m
+[0;32mI (315087) MAIN: Distance: 54.71 cm[0m
+[0;32mI (317107) MAIN: Distance: 54.72 cm[0m
+[0;32mI (319127) MAIN: Distance: 54.72 cm[0m
+[0;32mI (321147) MAIN: Distance: 54.71 cm[0m
+[0;32mI (323167) MAIN: Distance: 54.72 cm[0m
+[0;32mI (325187) MAIN: Distance: 54.72 cm[0m
+[0;32mI (327207) MAIN: Distance: 54.71 cm[0m
+[0;32mI (329227) MAIN: Distance: 54.72 cm[0m
+[0;32mI (331247) MAIN: Distance: 54.72 cm[0m
+[0;32mI (333267) MAIN: Distance: 54.71 cm[0m
+[0;32mI (335287) MAIN: Distance: 54.72 cm[0m
+[0;32mI (337307) MAIN: Distance: 54.71 cm[0m
+[0;32mI (339327) MAIN: Distance: 54.72 cm[0m
+[0;32mI (341347) MAIN: Distance: 54.72 cm[0m
+[0;32mI (343367) MAIN: Distance: 54.71 cm[0m
+[0;32mI (345387) MAIN: Distance: 54.71 cm[0m
+[0;32mI (347407) MAIN: Distance: 54.72 cm[0m
+���������������������������������������������������������������� (349427) MAIN: Distance: 54.72 cm
+[0;32mI (351447) MAIN: Distance: 54.71 cm[0m
+[0;32mI (353467) MAIN: Distance: 54.72 cm[0m
+[0;32mI (355487) MAIN: Distance: 54.72 cm[0m
+[0;32mI (357507) MAIN: Distance: 54.72 cm[0m
+[0;32mI (359527) MAIN: Distance: 54.71 cm[0m
+[0;32mI (361547) MAIN: Distance: 54.72 cm[0m
+[0;32mI (363567) MAIN: Distance: 54.71 cm[0m
+[0;32mI (365587) MAIN: Distance: 54.71 cm[0m
+���������������������������������������������������������������� (367607) MAIN: Distance: 54.72 cm
+[0;32mI (369627) MAIN: Distance: 54.71 cm[0m
+[0;32mI (371647) MAIN: Distance: 54.72 cm[0m
+[0;32mI (373667) MAIN: Distance: 54.71 cm[0m
+[0;32mI (375687) MAIN: Distance: 54.72 cm[0m
+[0;32mI (377707) MAIN: Distance: 54.71 cm[0m
+[0;32mI (379727) MAIN: Distance: 54.71 cm[0m
+[0;32mI (381747) MAIN: Distance: 54.71 cm[0m
+[0;32mI (383767) MAIN: Distance: 54.72 cm[0m
+[0;32mI (385787) MAIN: Distance: 54.71 cm[0m
+[0;32mI (387807) MAIN: Distance: 54.72 cm[0m
+[0;32mI (389827) MAIN: Distance: 54.71 cm[0m
+[0;32mI (391847) MAIN: Distance: 54.71 cm[0m
+[0;32mI (393867) MAIN: Distance: 54.71 cm[0m
+[0;32mI (395887) MAIN: Distance: 54.71 cm[0m
+[0;32mI (397907) MAIN: Distance: 54.72 cm[0m
+[0;32mI (399927) MAIN: Distance: 54.71 cm[0m
+[0;32mI (401947) MAIN: Distance: 54.71 cm[0m
+[0;32mI (403967) MAIN: Distance: 54.71 cm[0m
+[0;32mI (405987) MAIN: Distance: 54.71 cm[0m
+[0;32mI (408007) MAIN: Distance: 54.72 cm[0m
+[0;32mI (410027) MAIN: Distance: 54.72 cm[0m
+[0;32mI (412047) MAIN: Distance: 54.71 cm[0m
+[0;32mI (414067) MAIN: Distance: 54.72 cm[0m
+[0;32mI (416087) MAIN: Distance: 54.72 cm[0m
+[0;32mI (418107) MAIN: Distance: 54.71 cm[0m
+[0;32mI (420127) MAIN: Distance: 54.72 cm[0m
+[0;32mI (422147) MAIN: Distance: 54.71 cm[0m
+[0;32mI (424167) MAIN: Distance: 54.74 cm[0m
+[0;32mI (426187) MAIN: Distance: 54.72 cm[0m
+[0;32mI (428207) MAIN: Distance: 54.72 cm[0m
+[0;32mI (430227) MAIN: Distance: 54.72 cm[0m
+[0;32mI (432247) MAIN: Distance: 54.71 cm[0m
+[0;32mI (434267) MAIN: Distance: 54.71 cm[0m
+[0;32mI (436287) MAIN: Distance: 54.72 cm[0m
+[0;32mI (438307) MAIN: Distance: 54.72 cm[0m
+[0;32mI (440327) MAIN: Distance: 54.72 cm[0m
+[0;32mI (442347) MAIN: Distance: 54.72 cm[0m
+[0;32mI (444367) MAIN: Distance: 54.72 cm[0m
+[0;32mI (444897) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (446387) MAIN: Distance: 54.72 cm[0m
+[0;32mI (448407) MAIN: Distance: 54.71 cm[0m
+[0;32mI (450427) MAIN: Distance: 54.66 cm[0m
+[0;32mI (452447) MAIN: Distance: 54.72 cm[0m
+[0;32mI (454467) MAIN: Distance: 54.72 cm[0m
+[0;32mI (456487) MAIN: Distance: 54.69 cm[0m
+[0;32mI (458507) MAIN: Distance: 54.72 cm[0m
+[0;32mI (460527) MAIN: Distance: 54.72 cm[0m
+[0;32mI (462547) MAIN: Distance: 54.66 cm[0m
+���������������������������������������������������������������� (464567) MAIN: Distance: 54.72 cm
+[0;32mI (466587) MAIN: Distance: 54.71 cm[0m
+[0;32mI (468607) MAIN: Distance: 54.72 cm[0m
+[0;32mI (470627) MAIN: Distance: 54.72 cm[0m
+���������������������������������������������������������������� (472647) MAIN: Distance: 54.74 cm
+[0;32mI (474667) MAIN: Distance: 54.72 cm[0m
+[0;32mI (476687) MAIN: Distance: 54.72 cm[0m
+[0;32mI (478707) MAIN: Distance: 54.66 cm[0m
+[0;32mI (480727) MAIN: Distance: 54.71 cm[0m
+[0;32mI (482747) MAIN: Distance: 55.08 cm[0m
+[0;32mI (484767) MAIN: Distance: 54.18 cm[0m
+[0;32mI (486787) MAIN: Distance: 55.55 cm[0m
+[0;32mI (488807) MAIN: Distance: 54.67 cm[0m
+[0;32mI (490827) MAIN: Distance: 55.56 cm[0m
+[0;32mI (492847) MAIN: Distance: 55.98 cm[0m
+[0;32mI (494867) MAIN: Distance: 55.92 cm[0m
+[0;32mI (496887) MAIN: Distance: 55.87 cm[0m
+[0;32mI (498907) MAIN: Distance: 55.44 cm[0m
+[0;32mI (500927) MAIN: Distance: 55.92 cm[0m
+���������������������������������������������������������������� (502947) MAIN: Distance: 55.92 cm
+[0;32mI (504967) MAIN: Distance: 55.92 cm[0m
+[0;32mI (506987) MAIN: Distance: 55.92 cm[0m
+[0;32mI (509007) MAIN: Distance: 55.92 cm[0m
+[0;32mI (511027) MAIN: Distance: 55.94 cm[0m
+[0;32mI (513047) MAIN: Distance: 55.92 cm[0m
+[0;32mI (515067) MAIN: Distance: 55.92 cm[0m
+[0;32mI (517087) MAIN: Distance: 55.92 cm[0m
+���������������������������������������������������������������� (519107) MAIN: Distance: 55.50 cm
+[0;32mI (521127) MAIN: Distance: 55.51 cm[0m
+[0;32mI (523147) MAIN: Distance: 55.51 cm[0m
+[0;32mI (525167) MAIN: Distance: 55.50 cm[0m
+���������������������������������������������������������������� (527187) MAIN: Distance: 55.50 cm
+[0;32mI (529207) MAIN: Distance: 55.44 cm[0m
+[0;32mI (531227) MAIN: Distance: 55.50 cm[0m
+[0;32mI (533247) MAIN: Distance: 55.50 cm[0m
+[0;32mI (535267) MAIN: Distance: 55.92 cm[0m
+[0;32mI (537287) MAIN: Distance: 55.51 cm[0m
+[0;32mI (539307) MAIN: Distance: 55.08 cm[0m
+[0;32mI (541327) MAIN: Distance: 54.72 cm[0m
+[0;32mI (543347) MAIN: Distance: 55.46 cm[0m
+[0;32mI (545367) MAIN: Distance: 54.71 cm[0m
+[0;32mI (547387) MAIN: Distance: 55.50 cm[0m
+[0;32mI (549407) MAIN: Distance: 55.07 cm[0m
+[0;32mI (551427) MAIN: Distance: 55.08 cm[0m
+[0;32mI (553447) MAIN: Distance: 54.31 cm[0m
+[0;32mI (555467) MAIN: Distance: 54.31 cm[0m
+[0;32mI (557487) MAIN: Distance: 54.30 cm[0m
+[0;32mI (559507) MAIN: Distance: 55.08 cm[0m
+[0;32mI (561527) MAIN: Distance: 55.14 cm[0m
+[0;32mI (563547) MAIN: Distance: 54.74 cm[0m
+[0;32mI (565567) MAIN: Distance: 54.72 cm[0m
+[0;32mI (567587) MAIN: Distance: 55.14 cm[0m
+[0;32mI (569607) MAIN: Distance: 55.14 cm[0m
+[0;32mI (571627) MAIN: Distance: 55.15 cm[0m
+[0;32mI (573647) MAIN: Distance: 55.15 cm[0m
+[0;32mI (575667) MAIN: Distance: 55.15 cm[0m
+[0;32mI (577687) MAIN: Distance: 55.14 cm[0m
+[0;32mI (579707) MAIN: Distance: 55.15 cm[0m
+[0;32mI (581727) MAIN: Distance: 55.14 cm[0m
+[0;32mI (583747) MAIN: Distance: 68.32 cm[0m
+[0;32mI (585767) MAIN: Distance: 55.14 cm[0m
+[0;32mI (587787) MAIN: Distance: 55.14 cm[0m
+[0;32mI (589807) MAIN: Distance: 55.14 cm[0m
+[0;32mI (591827) MAIN: Distance: 55.14 cm[0m
+[0;32mI (593847) MAIN: Distance: 55.17 cm[0m
+[0;32mI (595867) MAIN: Distance: 55.14 cm[0m
+[0;32mI (597887) MAIN: Distance: 55.15 cm[0m
+[0;32mI (599907) MAIN: Distance: 55.15 cm[0m
+[0;32mI (601927) MAIN: Distance: 54.72 cm[0m
+[0;32mI (603947) MAIN: Distance: 55.15 cm[0m
+[0;32mI (605967) MAIN: Distance: 55.15 cm[0m
+[0;32mI (607987) MAIN: Distance: 55.14 cm[0m
+[0;32mI (610007) MAIN: Distance: 55.15 cm[0m
+[0;32mI (612027) MAIN: Distance: 55.14 cm[0m
+[0;32mI (614047) MAIN: Distance: 55.14 cm[0m
+[0;32mI (616067) MAIN: Distance: 55.15 cm[0m
+[0;32mI (618087) MAIN: Distance: 54.72 cm[0m
+[0;32mI (620107) MAIN: Distance: 55.15 cm[0m
+[0;32mI (622127) MAIN: Distance: 55.15 cm[0m
+[0;32mI (622677) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (624147) MAIN: Distance: 55.14 cm[0m
+[0;32mI (624237) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (626167) MAIN: Distance: 55.15 cm[0m
+[0;32mI (628187) MAIN: Distance: 55.14 cm[0m
+[0;32mI (630207) MAIN: Distance: 55.15 cm[0m
+[0;32mI (632227) MAIN: Distance: 55.15 cm[0m
+[0;32mI (634247) MAIN: Distance: 55.14 cm[0m
+[0;32mI (636267) MAIN: Distance: 54.71 cm[0m
+[0;32mI (638287) MAIN: Distance: 55.15 cm[0m
+[0;32mI (640307) MAIN: Distance: 55.15 cm[0m
+[0;32mI (642327) MAIN: Distance: 55.14 cm[0m
+[0;32mI (644347) MAIN: Distance: 55.14 cm[0m
+[0;32mI (646367) MAIN: Distance: 55.15 cm[0m
+[0;32mI (648387) MAIN: Distance: 55.14 cm[0m
+[0;32mI (650407) MAIN: Distance: 55.14 cm[0m
+[0;32mI (652427) MAIN: Distance: 55.15 cm[0m
+[0;32mI (654447) MAIN: Distance: 55.15 cm[0m
+[0;32mI (656467) MAIN: Distance: 55.08 cm[0m
+[0;32mI (658487) MAIN: Distance: 54.72 cm[0m
+[0;32mI (660507) MAIN: Distance: 54.24 cm[0m
+[0;32mI (662527) MAIN: Distance: 55.15 cm[0m
+[0;32mI (664547) MAIN: Distance: 55.15 cm[0m
+[0;32mI (666567) MAIN: Distance: 54.72 cm[0m
+[0;32mI (668587) MAIN: Distance: 55.14 cm[0m
+[0;32mI (670607) MAIN: Distance: 55.15 cm[0m
+[0;32mI (672627) MAIN: Distance: 55.15 cm[0m
+[0;32mI (674647) MAIN: Distance: 55.15 cm[0m
+[0;32mI (676667) MAIN: Distance: 55.15 cm[0m
+[0;32mI (678687) MAIN: Distance: 55.14 cm[0m
+[0;32mI (680707) MAIN: Distance: 55.03 cm[0m
+[0;32mI (682727) MAIN: Distance: 55.05 cm[0m
+[0;32mI (684747) MAIN: Distance: 54.19 cm[0m
+[0;32mI (685157) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (686767) MAIN: Distance: 54.55 cm[0m
+[0;32mI (688787) MAIN: Distance: 54.60 cm[0m
+[0;32mI (690807) MAIN: Distance: 54.62 cm[0m
+[0;32mI (692827) MAIN: Distance: 54.62 cm[0m
+[0;32mI (694847) MAIN: Distance: 54.60 cm[0m
+[0;32mI (696867) MAIN: Distance: 54.62 cm[0m
+[0;32mI (698887) MAIN: Distance: 54.60 cm[0m
+[0;32mI (700907) MAIN: Distance: 54.62 cm[0m
+[0;32mI (702927) MAIN: Distance: 54.62 cm[0m
+[0;32mI (704947) MAIN: Distance: 54.60 cm[0m
+[0;32mI (706967) MAIN: Distance: 54.62 cm[0m
+[0;32mI (708987) MAIN: Distance: 54.60 cm[0m
+[0;32mI (711007) MAIN: Distance: 54.60 cm[0m
+[0;32mI (713027) MAIN: Distance: 54.60 cm[0m
+[0;32mI (715047) MAIN: Distance: 54.60 cm[0m
+[0;32mI (717067) MAIN: Distance: 47.37 cm[0m
+[0;32mI (719087) MAIN: Distance: 54.60 cm[0m
+[0;32mI (721107) MAIN: Distance: 54.59 cm[0m
+[0;32mI (723127) MAIN: Distance: 54.60 cm[0m
+[0;32mI (725147) MAIN: Distance: 54.60 cm[0m
+[0;32mI (727167) MAIN: Distance: 54.62 cm[0m
+[0;32mI (729187) MAIN: Distance: 54.62 cm[0m
+[0;32mI (731207) MAIN: Distance: 54.60 cm[0m
+���������������������������������������������������������������� (733227) MAIN: Distance: 54.60 cm
+[0;32mI (735247) MAIN: Distance: 54.59 cm[0m
+[0;32mI (737267) MAIN: Distance: 54.62 cm[0m
+[0;32mI (739287) MAIN: Distance: 54.60 cm[0m
+[0;32mI (741307) MAIN: Distance: 54.62 cm[0m
+[0;32mI (743327) MAIN: Distance: 54.59 cm[0m
+[0;32mI (745347) MQTT: Message on home/relay1/cmd: OFF[0m
+[1;31mE (750337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (750337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (750337) task_wdt: Tasks currently running:[0m
+[1;31mE (750337) task_wdt: CPU 0: main[0m
+[1;31mE (750337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (750337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (755337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (755337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (755337) task_wdt: Tasks currently running:[0m
+[1;31mE (755337) task_wdt: CPU 0: main[0m
+[1;31mE (755337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (755337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (760337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (760337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (760337) task_wdt: Tasks currently running:[0m
+[1;31mE (760337) task_wdt: CPU 0: main[0m
+[1;31mE (760337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (760337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (765337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (765337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (765337) task_wdt: Tasks currently running:[0m
+[1;31mE (765337) task_wdt: CPU 0: main[0m
+[1;31mE (765337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (765337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (770337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (770337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (770337) task_wdt: Tasks currently running:[0m
+[1;31mE (770337) task_wdt: CPU 0: main[0m
+[1;31mE (770337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (770337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA33:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (775337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (775337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (775337) task_wdt: Tasks currently running:[0m
+[1;31mE (775337) task_wdt: CPU 0: main[0m
+[1;31mE (775337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (775337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (780337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (780337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (780337) task_wdt: Tasks currently running:[0m
+[1;31mE (780337) task_wdt: CPU 0: main[0m
+[1;31mE (780337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (780337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (785337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (785337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (785337) task_wdt: Tasks currently running:[0m
+[1;31mE (785337) task_wdt: CPU 0: main[0m
+[1;31mE (785337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (785337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (790337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (790337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (790337) task_wdt: Tasks currently running:[0m
+[1;31mE (790337) task_wdt: CPU 0: main[0m
+[1;31mE (790337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (790337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (795337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (795337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (795337) task_wdt: Tasks currently running:[0m
+[1;31mE (795337) task_wdt: CPU 0: main[0m
+[1;31mE (795337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (795337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (800337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (800337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (800337) task_wdt: Tasks currently running:[0m
+[1;31mE (800337) task_wdt: CPU 0: main[0m
+[1;31mE (800337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (800337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (805337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (805337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (805337) task_wdt: Tasks currently running:[0m
+[1;31mE (805337) task_wdt: CPU 0: main[0m
+[1;31mE (805337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (805337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (810337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (810337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (810337) task_wdt: Tasks currently running:[0m
+[1;31mE (810337) task_wdt: CPU 0: main[0m
+[1;31mE (810337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (810337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (815337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (815337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (815337) task_wdt: Tasks currently running:[0m
+[1;31mE (815337) task_wdt: CPU 0: main[0m
+[1;31mE (815337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (815337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (820337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (820337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (820337) task_wdt: Tasks currently running:[0m
+[1;31mE (820337) task_wdt: CPU 0: main[0m
+[1;31mE (820337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (820337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (825337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (825337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (825337) task_wdt: Tasks currently running:[0m
+[1;31mE (825337) task_wdt: CPU 0: main[0m
+[1;31mE (825337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (825337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (830337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (830337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (830337) task_wdt: Tasks currently running:[0m
+[1;31mE (830337) task_wdt: CPU 0: main[0m
+[1;31mE (830337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (830337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F79:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (835337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (835337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (835337) task_wdt: Tasks currently running:[0m
+[1;31mE (835337) task_wdt: CPU 0: main[0m
+[1;31mE (835337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (835337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (840337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (840337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (840337) task_wdt: Tasks currently running:[0m
+[1;31mE (840337) task_wdt: CPU 0: main[0m
+[1;31mE (840337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (840337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (845337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (845337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (845337) task_wdt: Tasks currently running:[0m
+[1;31mE (845337) task_wdt: CPU 0: main[0m
+[1;31mE (845337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (845337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[0;32mI (846717) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (846727) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (846727) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (846737) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (849577) MQTT: Message on home/relay1/cmd: ON[0m
+[1;31mE (850337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (850337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (850337) task_wdt: Tasks currently running:[0m
+[1;31mE (850337) task_wdt: CPU 0: main[0m
+[1;31mE (850337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (850337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[0;32mI (851247) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (853687) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (854497) MQTT: Message on home/relay1/cmd: OFF[0m
+[1;31mE (855337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (855337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (855337) task_wdt: Tasks currently running:[0m
+[1;31mE (855337) task_wdt: CPU 0: main[0m
+[1;31mE (855337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (855337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (860337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (860337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (860337) task_wdt: Tasks currently running:[0m
+[1;31mE (860337) task_wdt: CPU 0: main[0m
+[1;31mE (860337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (860337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[0;32mI (862897) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (864537) MQTT: Message on home/relay1/cmd: OFF[0m
+[1;31mE (865337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (865337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (865337) task_wdt: Tasks currently running:[0m
+[1;31mE (865337) task_wdt: CPU 0: main[0m
+[1;31mE (865337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (865337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (870337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (870337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (870337) task_wdt: Tasks currently running:[0m
+[1;31mE (870337) task_wdt: CPU 0: main[0m
+[1;31mE (870337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (870337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (875337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (875337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (875337) task_wdt: Tasks currently running:[0m
+[1;31mE (875337) task_wdt: CPU 0: main[0m
+[1;31mE (875337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (875337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (880337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (880337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (880337) task_wdt: Tasks currently running:[0m
+[1;31mE (880337) task_wdt: CPU 0: main[0m
+[1;31mE (880337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (880337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA33:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (885337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (885337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (885337) task_wdt: Tasks currently running:[0m
+[1;31mE (885337) task_wdt: CPU 0: main[0m
+[1;31mE (885337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (885337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (890337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (890337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (890337) task_wdt: Tasks currently running:[0m
+[1;31mE (890337) task_wdt: CPU 0: main[0m
+[1;31mE (890337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (890337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (895337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (895337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (895337) task_wdt: Tasks currently running:[0m
+[1;31mE (895337) task_wdt: CPU 0: main[0m
+[1;31mE (895337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (895337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (900337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (900337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (900337) task_wdt: Tasks currently running:[0m
+[1;31mE (900337) task_wdt: CPU 0: main[0m
+[1;31mE (900337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (900337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (905337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (905337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (905337) task_wdt: Tasks currently running:[0m
+[1;31mE (905337) task_wdt: CPU 0: main[0m
+[1;31mE (905337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (905337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (910337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (910337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (910337) task_wdt: Tasks currently running:[0m
+[1;31mE (910337) task_wdt: CPU 0: main[0m
+[1;31mE (910337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (910337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (915337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (915337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (915337) task_wdt: Tasks currently running:[0m
+[1;31mE (915337) task_wdt: CPU 0: main[0m
+[1;31mE (915337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (915337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (920337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (920337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (920337) task_wdt: Tasks currently running:[0m
+[1;31mE (920337) task_wdt: CPU 0: main[0m
+[1;31mE (920337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (920337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (925337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (925337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (925337) task_wdt: Tasks currently running:[0m
+[1;31mE (925337) task_wdt: CPU 0: main[0m
+[1;31mE (925337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (925337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA28:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (930337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (930337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (930337) task_wdt: Tasks currently running:[0m
+[1;31mE (930337) task_wdt: CPU 0: main[0m
+[1;31mE (930337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (930337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (935337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (935337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (935337) task_wdt: Tasks currently running:[0m
+[1;31mE (935337) task_wdt: CPU 0: main[0m
+[1;31mE (935337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (935337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (940337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (940337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (940337) task_wdt: Tasks currently running:[0m
+[1;31mE (940337) task_wdt: CPU 0: main[0m
+[1;31mE (940337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (940337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400DCA21:0x3FFBAA10 0x400D8F7F:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (945337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (945337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (945337) task_wdt: Tasks currently running:[0m
+[1;31mE (945337) task_wdt: CPU 0: main[0m
+[1;31mE (945337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (945337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x400D8F76:0x3FFBAA40 0x400D8B76:0x3FFBAA60 0x4016B6C7:0x3FFBAAA0 0x4008A265:0x3FFBAAD0
+
+[1;31mE (950337) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (950337) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (950337) task_wdt: Tasks currently running:[0m
+[1;31mE (950337) task_wdt: CPU 0: wifi[0m
+[1;31mE (950337) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (950337) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400DE33E:0x3FFB1F90 0x400DE700:0x3FFB1FB0 0x400834B1:0x3FFB1FE0 0x40150AA9:0x3FFC0620 0x401209FC:0x3FFC0640 0x400950F0:0x3FFC0660 0x4016922E:0x3FFC0680 0x40169295:0x3FFC06A0 0x400929C6:0x3FFC06C0 0x4008A265:0x3FFC06F0
+

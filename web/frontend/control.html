@@ -1,16 +1,18 @@
 <!-- frontend/control.html (Đã xóa checkbox) -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>MQTT Relay & Water Level Control</title>
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h2>ESP32 MQTT Control Panel</h2>
-        
+
         <div class="main-content">
             <!-- ===== CỘT BÊN TRÁI ===== -->
             <div class="left-column">
@@ -20,7 +22,7 @@
                     <button onclick="sendCmd('OFF')">OFF</button>
                     <h3>Relay Status: <span id="status">...</span></h3>
                 </div>
-        
+
                 <div class="section">
                     <h3>Scheduler</h3>
                     <form onsubmit="addSchedule(event)">
@@ -39,7 +41,7 @@
             <div class="right-column">
                 <div class="section">
                     <h3>Giám sát & Điều khiển Tự động</h3>
-                    
+
                     <h4>Khoảng cách hiện tại:</h4>
                     <h2><span id="distance-value">--</span> cm</h2>
                     <p style="color: #666;">(Khoảng cách càng nhỏ, mực nước càng cao)</p>
@@ -55,7 +57,7 @@
                             </div>
                             <small>(Mực nước tối thiểu)</small>
                         </div>
-                        
+
                         <div class="limit-input-group">
                             <label for="turn-off-distance"><b>Tắt</b> Relay khi khoảng cách ≥</label>
                             <div class="input-with-unit">
@@ -68,17 +70,19 @@
 
                     <button type="button" onclick="setLimits()">Lưu và Kích hoạt Tự động</button>
                     <button type="button" class="delete-button" onclick="clearLimits()">Xóa Ngưỡng</button>
-                    
+
                     <div class="current-limits">
                         <p>Ngưỡng Bật: <b id="turn-on-display">Chưa đặt</b></p>
                         <p>Ngưỡng Tắt: <b id="turn-off-display">Chưa đặt</b></p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
