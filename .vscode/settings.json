@@ -43,6 +43,17 @@
         "ultrasonic_sensor.h": "c",
         "freertos.h": "c",
         "stdio.h": "c",
-        "gpio.h": "c"
-    }
+        "gpio.h": "c",
+        "stdbool.h": "c",
+        "stdint.h": "c",
+        "relay_control.h": "c",
+        "esp_log.h": "c",
+        "oled_display.h": "c",
+        "ssd1306_i2c_hal.h": "c",
+        "ssd1306.h": "c",
+        "ssd1306_hal.h": "c",
+        "nvs_flash.h": "c",
+        "timer_control.h": "c"
+    },
+    "liveServer.settings.multiRootWorkspaceName": "blink"
 }

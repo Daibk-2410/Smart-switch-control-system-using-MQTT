@@ -8,7 +8,8 @@
 static int TRIGGER_PIN;
 static int ECHO_PIN;
 
-void ultrasonic_init(int trigger_pin, int echo_pin) {
+void ultrasonic_init(int trigger_pin, int echo_pin)
+{
     TRIGGER_PIN = trigger_pin;
     ECHO_PIN = echo_pin;
 
@@ -25,8 +26,9 @@ void ultrasonic_init(int trigger_pin, int echo_pin) {
     gpio_config(&echo_conf);
 }
 
-float ultrasonic_get_distance_cm() {
-    // 1. Gửi một xung 10 micro-giây đến chân Trigger
+float ultrasonic_get_distance_cm()
+{
+    // Gửi một xung 10 micro-giây đến chân Trigger để có thể khỏi động module AJ-SR04
     gpio_set_level(TRIGGER_PIN, 0);
     vTaskDelay(pdMS_TO_TICKS(1)); // Chờ ổn định
     gpio_set_level(TRIGGER_PIN, 1);
@@ -34,17 +36,19 @@ float ultrasonic_get_distance_cm() {
     gpio_set_level(TRIGGER_PIN, 0);
 
     // 2. Chờ chân Echo chuyển sang mức cao (bắt đầu nhận tín hiệu)
-    while (gpio_get_level(ECHO_PIN) == 0);
+    while (gpio_get_level(ECHO_PIN) == 0)
+        ;
     int64_t start_time = esp_timer_get_time();
 
     // 3. Chờ chân Echo chuyển về mức thấp (kết thúc nhận tín hiệu)
-    while (gpio_get_level(ECHO_PIN) == 1);
+    while (gpio_get_level(ECHO_PIN) == 1)
+        ;
     int64_t end_time = esp_timer_get_time();
 
     // 4. Tính toán khoảng cách
     int64_t duration = end_time - start_time;
     // Khoảng cách (cm) = (Thời gian (us) * Tốc độ âm thanh (cm/us)) / 2
-    // Tốc độ âm thanh ~ 343 m/s = 0.0343 cm/us
+    // Tốc độ âm thanh 343 m/s = 0.0343 cm/us
     float distance = 100 - (duration * 0.0343) / 2.0;
 
     return distance;

@@ -1,0 +1,353 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (P�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec  4 2025 01:11:41[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=31818h (202776) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00041840 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00041864 vaddr=3ffb0000 size=04310h ( 17168) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00045b7c vaddr=40080000 size=0a49ch ( 42140) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a132ch (660268) map[0m
+[0;32mI (413) esp_image: segment 5: paddr=000f1354 vaddr=4008a49c size=0e558h ( 58712) load[0m
+[0;32mI (448) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (448) boot: Disabling RNG early entropy source...[0m
+[0;32mI (459) cpu_start: Multicore app[0m
+[0;32mI (467) cpu_start: Pro cpu start user code[0m
+[0;32mI (467) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (467) app_init: Application information:[0m
+[0;32mI (467) app_init: Project name:     blink[0m
+[0;32mI (471) app_init: App version:      286b056-dirty[0m
+[0;32mI (475) app_init: Compile time:     Dec  4 2025 01:10:16[0m
+[0;32mI (480) app_init: ELF file SHA256:  f69a6e5a5...[0m
+[0;32mI (485) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (489) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (493) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (497) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (501) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (507) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFB9190 len 00026E70 (155 KiB): DRAM[0m
+[0;32mI (517) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (523) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (528) heap_init: At 400989F4 len 0000760C (29 KiB): IRAM[0m
+[0;32mI (535) spi_flash: detected chip: generic[0m
+[0;32mI (537) spi_flash: flash io: dio[0m
+[0;33mW (540) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (553) main_task: Started on CPU0[0m
+[0;32mI (563) main_task: Calling app_main()[0m
+[0;32mI (593) OLED: Khoi tao SSD1306 voi Driver moi...[0m
+[0;32mI (1593) SSD1306: New i2c driver is used[0m
+[0;32mI (1593) SSD1306: OLED configured successfully[0m
+[0;32mI (1663) OLED: Hien thi OLED...[0m
+[0;32mI (3683) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3683) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3683) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3693) gpio: GPIO[33]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3703) BUTTON: Advanced button handler initialized.[0m
+[0;32mI (3703) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3713) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3733) wifi:wifi driver task: 3ffc21b4, prio:23, stack:6656, core=0[0m
+[0;32mI (3743) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (3753) wifi:wifi certification version: v7.0[0m
+[0;32mI (3753) wifi:config NVS flash: enabled[0m
+[0;32mI (3753) wifi:config nano formatting: disabled[0m
+[0;32mI (3753) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (3763) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (3763) wifi:Init management short buffer num: 32[0m
+[0;32mI (3763) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (3773) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (3773) wifi:Init static rx buffer num: 10[0m
+[0;32mI (3783) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (3783) wifi_init: rx ba win: 6[0m
+[0;32mI (3783) wifi_init: accept mbox: 6[0m
+[0;32mI (3793) wifi_init: tcpip mbox: 32[0m
+[0;32mI (3793) wifi_init: udp mbox: 6[0m
+[0;32mI (3793) wifi_init: tcp mbox: 6[0m
+[0;32mI (3803) wifi_init: tcp tx win: 5760[0m
+[0;32mI (3803) wifi_init: tcp rx win: 5760[0m
+[0;32mI (3803) wifi_init: tcp mss: 1440[0m
+[0;32mI (3803) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (3813) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (3813) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3823) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (3913) wifi:mode : sta (04:83:08:58:af:88)[0m
+[0;32mI (3913) wifi:enable tsf[0m
+[0;32mI (3923) WiFi: Connecting to WiFi...[0m
+[0;32mI (3973) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3983) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4033) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4083) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4193) wifi:connected with Tro 1, aid = 6, channel 8, BW20, bssid = 4c:12:e8:40:45:30[0m
+[0;32mI (4193) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (4193) wifi:pm start, type: 1[0m
+
+[0;32mI (4203) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4283) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5393) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5393) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (7913) MQTT: MQTT client started[0m
+[0;32mI (7923) wifi:<ba-add>idx:0 (ifx:0, 4c:12:e8:40:45:30), tid:0, ssn:5, winSize:64[0m
+[0;32mI (8593) wifi:<ba-add>idx:1 (ifx:0, 4c:12:e8:40:45:30), tid:1, ssn:0, winSize:64[0m
+[0;32mI (9013) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (9993) MAIN: Ultrasonic task started.[0m
+[0;32mI (10013) MAIN: Distance: 65.60 cm[0m
+[0;32mI (10013) MAIN: OLED update task started.[0m
+[0;32mI (10013) MAIN: Status publish task started.[0m
+[0;32mI (10013) MAIN: Initialization finished. Application tasks started.[0m
+[0;32mI (10013) main_task: Returned from app_main()[0m
+[0;32mI (10333) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (12353) MAIN: Distance: 65.60 cm[0m
+[0;32mI (14373) MAIN: Distance: 65.60 cm[0m
+[0;32mI (16393) MAIN: Distance: 65.60 cm[0m
+[0;32mI (16973) BUTTON: Action: Cancel Timer[0m
+[0;32mI (17383) BUTTON: Action: Cancel Timer[0m
+[0;32mI (18403) MAIN: Distance: 65.58 cm[0m
+[0;32mI (18783) BUTTON: Action: Cancel Timer[0m
+[0;32mI (19633) BUTTON: Action: Cancel Timer[0m
+[0;32mI (20423) MAIN: Distance: 67.47 cm[0m
+[0;32mI (21953) BUTTON: Action: Toggle Relay[0m
+[0;32mI (21953) RELAY: Relay toggled to ON[0m
+[0;32mI (22443) MAIN: Distance: 66.03 cm[0m
+[0;32mI (24463) MAIN: Distance: 66.92 cm[0m
+[0;32mI (25063) BUTTON: Action: Toggle Relay[0m
+[0;32mI (25063) RELAY: Relay toggled to OFF[0m
+[0;32mI (26483) MAIN: Distance: 67.35 cm[0m
+[0;32mI (26713) BUTTON: Action: Cancel Timer[0m
+[0;32mI (28503) MAIN: Distance: 67.40 cm[0m
+[0;32mI (28923) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (30523) MAIN: Distance: 65.61 cm[0m
+[0;32mI (30923) BUTTON: Multi-press window closed. Starting timer for 10 minutes.[0m
+[0;32mI (30923) TIMER_CTRL: Timer started for 10 minutes. Relay is ON.[0m
+[0;32mI (32543) MAIN: Distance: 56.90 cm[0m
+[0;32mI (34563) MAIN: Distance: 65.60 cm[0m
+[0;32mI (36583) MAIN: Distance: 65.60 cm[0m
+[0;32mI (38603) MAIN: Distance: 65.67 cm[0m
+[0;32mI (40623) MAIN: Distance: 65.67 cm[0m
+[0;32mI (42643) MAIN: Distance: 66.03 cm[0m
+[0;32mI (44663) MAIN: Distance: 66.08 cm[0m
+[0;32mI (45683) BUTTON: Action: Cancel Timer[0m
+[0;32mI (45773) TIMER_CTRL: Timer stopped. Relay is OFF.[0m
+[0;32mI (46683) MAIN: Distance: 66.49 cm[0m
+[0;32mI (47853) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (48463) BUTTON: Timer button press detected. Count: 2[0m
+[0;32mI (48703) MAIN: Distance: 66.03 cm[0m
+[0;32mI (48723) BUTTON: Timer button press detected. Count: 3[0m
+[0;32mI (48993) BUTTON: Timer button press detected. Count: 4[0m
+[0;32mI (50723) MAIN: Distance: 66.87 cm[0m
+[0;32mI (50993) BUTTON: Multi-press window closed. Starting timer for 40 minutes.[0m
+[0;32mI (50993) TIMER_CTRL: Timer started for 40 minutes. Relay is ON.[0m
+[0;32mI (52743) MAIN: Distance: 66.87 cm[0m
+[0;32mI (54763) MAIN: Distance: 67.29 cm[0m
+[0;32mI (56773) MAIN: Distance: 66.87 cm[0m
+[0;32mI (58793) MAIN: Distance: 65.60 cm[0m
+[0;32mI (60813) MAIN: Distance: 66.92 cm[0m
+[0;32mI (62133) BUTTON: Action: Cancel Timer[0m
+
+***ERROR*** A stack overflow in task Tmr Svc has been detected.
+
+
+Backtrace: 0x40081c0d:0x3ffbc050 0x4008a2c1:0x3ffbc070 0x4008b1b6:0x3ffbc090 0x4008c9db:0x3ffbc110 0x4008b2c0:0x3ffbc130 0x4008b272:0xa5a5a5a5 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: f69a6e5a5
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec  4 2025 01:11:41[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (39) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=31818h (202776) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00041840 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00041864 vaddr=3ffb0000 size=04310h ( 17168) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00045b7c vaddr=40080000 size=0a49ch ( 42140) load[0m
+[0;32mI (187) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a132ch (660268) map[0m
+[0;32mI (413) esp_image: segment 5: paddr=000f1354 vaddr=4008a49c size=0e558h ( 58712) load[0m
+[0;32mI (448) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (448) boot: Disabling RNG early entropy source...[0m
+[0;32mI (459) cpu_start: Multicore app[0m
+[0;32mI (467) cpu_start: Pro cpu start user code[0m
+[0;32mI (467) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (467) app_init: Application information:[0m
+[0;32mI (467) app_init: Project name:     blink[0m
+[0;32mI (471) app_init: App version:      286b056-dirty[0m
+[0;32mI (475) app_init: Compile time:     Dec  4 2025 01:10:16[0m
+[0;32mI (480) app_init: ELF file SHA256:  f69a6e5a5...[0m
+[0;32mI (485) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (489) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (493) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (497) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (501) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (507) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFB9190 len 00026E70 (155 KiB): DRAM[0m
+[0;32mI (517) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (523) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (528) heap_init: At 400989F4 len 0000760C (29 KiB): IRAM[0m
+[0;32mI (535) spi_flash: detected chip: generic[0m
+[0;32mI (537) spi_flash: flash io: dio[0m
+[0;33mW (540) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (553) main_task: Started on CPU0[0m
+[0;32mI (563) main_task: Calling app_main()[0m
+[0;32mI (593) OLED: Khoi tao SSD1306 voi Driver moi...[0m
+[0;32mI (1593) SSD1306: New i2c driver is used[0m
+[0;32mI (1593) SSD1306: OLED configured successfully[0m
+[0;32mI (1663) OLED: Hien thi OLED...[0m
+[0;32mI (3683) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3683) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3683) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3693) gpio: GPIO[33]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3703) BUTTON: Advanced button handler initialized.[0m
+[0;32mI (3703) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3713) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3733) wifi:wifi driver task: 3ffc21b4, prio:23, stack:6656, core=0[0m
+[0;32mI (3743) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (3753) wifi:wifi certification version: v7.0[0m
+[0;32mI (3753) wifi:config NVS flash: enabled[0m
+[0;32mI (3753) wifi:config nano formatting: disabled[0m
+[0;32mI (3753) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (3763) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (3763) wifi:Init management short buffer num: 32[0m
+[0;32mI (3763) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (3773) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (3773) wifi:Init static rx buffer num: 10[0m
+[0;32mI (3783) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (3783) wifi_init: rx ba win: 6[0m
+[0;32mI (3783) wifi_init: accept mbox: 6[0m
+[0;32mI (3793) wifi_init: tcpip mbox: 32[0m
+[0;32mI (3793) wifi_init: udp mbox: 6[0m
+[0;32mI (3793) wifi_init: tcp mbox: 6[0m
+[0;32mI (3793) wifi_init: tcp tx win: 5760[0m
+[0;32mI (3803) wifi_init: tcp rx win: 5760[0m
+[0;32mI (3803) wifi_init: tcp mss: 1440[0m
+[0;32mI (3803) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (3813) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (3813) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3823) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (3913) wifi:mode : sta (04:83:08:58:af:88)[0m
+[0;32mI (3913) wifi:enable tsf[0m
+[0;32mI (3923) WiFi: Connecting to WiFi...[0m
+[0;32mI (3933) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3933) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3973) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4043) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4143) wifi:connected with Tro 1, aid = 7, channel 8, BW20, bssid = 4c:12:e8:40:45:30[0m
+[0;32mI (4143) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (4153) wifi:pm start, type: 1[0m
+
+[0;32mI (4153) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4173) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5403) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5403) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (7923) MQTT: MQTT client started[0m
+[0;32mI (7933) wifi:<ba-add>idx:0 (ifx:0, 4c:12:e8:40:45:30), tid:0, ssn:5, winSize:64[0m
+[0;32mI (8373) wifi:<ba-add>idx:1 (ifx:0, 4c:12:e8:40:45:30), tid:1, ssn:0, winSize:64[0m
+[0;32mI (8803) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (10003) MAIN: Ultrasonic task started.[0m
+[0;32mI (10023) MAIN: Distance: 66.93 cm[0m
+[0;32mI (10023) MAIN: Status publish task started.[0m
+[0;32mI (10023) MAIN: OLED update task started.[0m
+[0;32mI (10023) MAIN: Initialization finished. Application tasks started.[0m
+[0;32mI (10023) main_task: Returned from app_main()[0m
+[0;32mI (10123) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (12143) MAIN: Distance: 65.60 cm[0m
+[0;32mI (13963) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (14163) MAIN: Distance: 65.61 cm[0m
+[0;32mI (14253) BUTTON: Action: Cancel Timer[0m
+[0;32mI (14253) BUTTON: Multi-press count has been reset.[0m
+[0;32mI (14943) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (16183) MAIN: Distance: 65.60 cm[0m
+[0;32mI (16943) BUTTON: Multi-press window closed. Starting timer for 10 minutes.[0m
+[0;32mI (16943) TIMER_CTRL: Timer started for 10 minutes. Relay is ON.[0m
+[0;32mI (18203) MAIN: Distance: 78.65 cm[0m
+[0;32mI (18633) BUTTON: Action: Cancel Timer[0m
+[0;32mI (18723) TIMER_CTRL: Timer stopped. Relay is OFF.[0m
+[0;32mI (20223) MAIN: Distance: 65.61 cm[0m
+[0;32mI (22243) MAIN: Distance: 66.01 cm[0m
+[0;32mI (23283) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (24013) BUTTON: Timer button press detected. Count: 2[0m
+[0;32mI (24263) MAIN: Distance: 67.42 cm[0m
+[0;32mI (26013) BUTTON: Multi-press window closed. Starting timer for 20 minutes.[0m
+[0;32mI (26013) TIMER_CTRL: Timer started for 20 minutes. Relay is ON.[0m
+[0;32mI (26283) MAIN: Distance: 65.60 cm[0m
+[0;32mI (28303) MAIN: Distance: 65.61 cm[0m
+[0;33mW (29003) BUTTON: Relay is already ON. Please turn it off to set a timer.[0m
+[0;32mI (30313) MAIN: Distance: 67.33 cm[0m
+[0;32mI (31043) BUTTON: Action: Cancel Timer[0m
+[0;32mI (31133) TIMER_CTRL: Timer stopped. Relay is OFF.[0m
+[0;32mI (32333) MAIN: Distance: 67.35 cm[0m
+[0;32mI (33173) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (34353) MAIN: Distance: 67.35 cm[0m
+[0;32mI (34563) BUTTON: Timer button press detected. Count: 2[0m
+[0;32mI (34873) BUTTON: Action: Cancel Timer[0m
+[0;32mI (34873) BUTTON: Multi-press count has been reset.[0m
+[0;32mI (35173) BUTTON: Action: Cancel Timer[0m
+[0;32mI (36373) MAIN: Distance: 66.92 cm[0m
+[0;32mI (37833) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (38393) MAIN: Distance: 65.60 cm[0m
+[0;32mI (38413) BUTTON: Action: Cancel Timer[0m
+[0;32mI (38413) BUTTON: Multi-press count has been reset.[0m
+[0;32mI (40413) MAIN: Distance: 65.60 cm[0m
+[0;32mI (40903) BUTTON: Action: Cancel Timer[0m
+[0;32mI (42433) MAIN: Distance: 66.93 cm[0m
+[0;32mI (42703) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (43893) BUTTON: Action: Cancel Timer[0m
+[0;32mI (43893) BUTTON: Multi-press count has been reset.[0m
+[0;32mI (44453) MAIN: Distance: 66.92 cm[0m
+[0;32mI (44883) BUTTON: Action: Cancel Timer[0m
+[0;32mI (45953) BUTTON: Timer button press detected. Count: 1[0m
+[0;32mI (46473) MAIN: Distance: 66.92 cm[0m
+[0;32mI (47953) BUTTON: Multi-press window closed. Starting timer for 10 minutes.[0m
+[0;32mI (47953) TIMER_CTRL: Timer started for 10 minutes. Relay is ON.[0m
+[0;32mI (48493) MAIN: Distance: 66.92 cm[0m
+[0;32mI (50513) MAIN: Distance: 66.92 cm[0m
+[0;32mI (52533) MAIN: Distance: 66.03 cm[0m
+[0;32mI (54553) MAIN: Distance: 66.93 cm[0m
+[0;32mI (55323) BUTTON: Action: Cancel Timer[0m
+[0;32mI (55413) TIMER_CTRL: Timer stopped. Relay is OFF.[0m
+[0;32mI (56573) MAIN: Distance: 67.35 cm[0m
+[0;32mI (58593) MAIN: Distance: 66.44 cm[0m

@@ -33,7 +33,7 @@ client.on("connect", () => {
     console.log("Connected to HiveMQ!");
     client.subscribe(topicStatus);
     client.subscribe(topicDistance);
-    statusSpan.innerText = "Connected";
+    statusSpan.innerText = "Conntected, waiting for data...";
 });
 
 client.on("message", (topic, message) => {
@@ -99,7 +99,6 @@ function clearLimits() {
 
 
 function checkDistanceAndControlRelay() {
-    // Bỏ điều kiện kiểm tra checkbox, chỉ cần có ngưỡng là chạy
     if (turnOnDistance === null || turnOffDistance === null || currentDistance === null) {
         return;
     }

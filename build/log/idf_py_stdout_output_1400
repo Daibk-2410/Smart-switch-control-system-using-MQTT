@@ -1,0 +1,272 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (P�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Dec  4 2025 01:11:41[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=31828h (202792) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00041850 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00041874 vaddr=3ffb0000 size=04310h ( 17168) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00045b8c vaddr=40080000 size=0a48ch ( 42124) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a1360h (660320) map[0m
+[0;32mI (413) esp_image: segment 5: paddr=000f1388 vaddr=4008a48c size=0e568h ( 58728) load[0m
+[0;32mI (448) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (448) boot: Disabling RNG early entropy source...[0m
+[0;32mI (459) cpu_start: Multicore app[0m
+[0;32mI (467) cpu_start: Pro cpu start user code[0m
+[0;32mI (467) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (467) app_init: Application information:[0m
+[0;32mI (467) app_init: Project name:     blink[0m
+[0;32mI (471) app_init: App version:      286b056-dirty[0m
+[0;32mI (475) app_init: Compile time:     Dec  4 2025 01:10:16[0m
+[0;32mI (480) app_init: ELF file SHA256:  569006758...[0m
+[0;32mI (485) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (489) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (493) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (497) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (501) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (507) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFB9190 len 00026E70 (155 KiB): DRAM[0m
+[0;32mI (517) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (523) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (528) heap_init: At 400989F4 len 0000760C (29 KiB): IRAM[0m
+[0;32mI (535) spi_flash: detected chip: generic[0m
+[0;32mI (537) spi_flash: flash io: dio[0m
+[0;33mW (540) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (553) main_task: Started on CPU0[0m
+[0;32mI (563) main_task: Calling app_main()[0m
+[0;32mI (593) OLED: Khoi tao SSD1306 voi Driver moi...[0m
+[0;32mI (1593) SSD1306: New i2c driver is used[0m
+[0;32mI (1593) SSD1306: OLED configured successfully[0m
+[0;32mI (1663) OLED: Hien thi OLED...[0m
+[0;32mI (3673) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3673) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3673) gpio: GPIO[32]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3683) gpio: GPIO[33]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (3693) BUTTON: Advanced button handler initialized.[0m
+[0;32mI (3693) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3703) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3723) wifi:wifi driver task: 3ffc21b4, prio:23, stack:6656, core=0[0m
+[0;32mI (3733) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (3743) wifi:wifi certification version: v7.0[0m
+[0;32mI (3743) wifi:config NVS flash: enabled[0m
+[0;32mI (3743) wifi:config nano formatting: disabled[0m
+[0;32mI (3743) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (3753) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (3753) wifi:Init management short buffer num: 32[0m
+[0;32mI (3753) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (3763) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (3763) wifi:Init static rx buffer num: 10[0m
+[0;32mI (3773) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (3773) wifi_init: rx ba win: 6[0m
+[0;32mI (3773) wifi_init: accept mbox: 6[0m
+[0;32mI (3783) wifi_init: tcpip mbox: 32[0m
+[0;32mI (3783) wifi_init: udp mbox: 6[0m
+[0;32mI (3783) wifi_init: tcp mbox: 6[0m
+[0;32mI (3783) wifi_init: tcp tx win: 5760[0m
+[0;32mI (3793) wifi_init: tcp rx win: 5760[0m
+[0;32mI (3793) wifi_init: tcp mss: 1440[0m
+[0;32mI (3793) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (3803) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (3803) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (3813) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (3903) wifi:mode : sta (04:83:08:58:af:88)[0m
+[0;32mI (3903) wifi:enable tsf[0m
+[0;32mI (3913) WiFi: Connecting to WiFi...[0m
+[0;32mI (3923) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3923) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3943) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4003) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4103) wifi:connected with Tro 1, aid = 5, channel 8, BW20, bssid = 4c:12:e8:40:45:30[0m
+[0;32mI (4103) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (4113) wifi:pm start, type: 1[0m
+
+[0;32mI (4113) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4193) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (5363) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5363) WiFi: WiFi connected, IP obtained![0m
+[0;32mI (7913) MQTT: MQTT client started[0m
+[0;32mI (7923) wifi:<ba-add>idx:0 (ifx:0, 4c:12:e8:40:45:30), tid:0, ssn:5, winSize:64[0m
+[0;32mI (8293) wifi:<ba-add>idx:1 (ifx:0, 4c:12:e8:40:45:30), tid:1, ssn:0, winSize:64[0m
+[0;32mI (8823) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (9993) MAIN: Ultrasonic task started.[0m
+[0;32mI (10013) MAIN: Distance: 72.34 cm[0m
+[0;32mI (10013) MAIN: Status publish task started.[0m
+[0;32mI (10013) MAIN: OLED update task started.[0m
+[0;32mI (10013) MAIN: Initialization finished. Application tasks started.[0m
+[0;32mI (10013) main_task: Returned from app_main()[0m
+[0;32mI (10343) MQTT: Connected to HiveMQ Cloud[0m
+[0;32mI (12363) MAIN: Distance: 72.34 cm[0m
+[0;32mI (14383) MAIN: Distance: 72.34 cm[0m
+[0;32mI (16403) MAIN: Distance: 72.34 cm[0m
+[0;32mI (18423) MAIN: Distance: 72.34 cm[0m
+[0;32mI (20443) MAIN: Distance: 72.34 cm[0m
+[0;32mI (22463) MAIN: Distance: 72.34 cm[0m
+[0;32mI (24483) MAIN: Distance: 72.34 cm[0m
+[0;32mI (26503) MAIN: Distance: 72.34 cm[0m
+[0;32mI (28523) MAIN: Distance: 72.34 cm[0m
+[0;32mI (30543) MAIN: Distance: 72.34 cm[0m
+[0;32mI (32563) MAIN: Distance: 72.35 cm[0m
+[0;32mI (34583) MAIN: Distance: 72.34 cm[0m
+[0;32mI (36603) MAIN: Distance: 72.34 cm[0m
+[0;32mI (38623) MAIN: Distance: 72.32 cm[0m
+[0;32mI (40643) MAIN: Distance: 85.49 cm[0m
+[0;32mI (42663) MAIN: Distance: 72.34 cm[0m
+[0;32mI (44683) MAIN: Distance: 72.34 cm[0m
+[0;32mI (46703) MAIN: Distance: 72.32 cm[0m
+[0;32mI (48723) MAIN: Distance: 72.34 cm[0m
+[0;32mI (48953) MQTT: Message on home/relay1/cmd: ON[0m
+[0;32mI (50583) MQTT: Message on home/relay1/cmd: OFF[0m
+[0;32mI (50743) MAIN: Distance: 72.34 cm[0m
+[0;32mI (52753) MAIN: Distance: 72.32 cm[0m
+[0;32mI (54773) MAIN: Distance: 61.91 cm[0m
+[0;32mI (56793) MAIN: Distance: 72.34 cm[0m
+[0;32mI (58813) MAIN: Distance: 72.34 cm[0m
+[0;32mI (60833) MAIN: Distance: 72.35 cm[0m
+[0;32mI (62853) MAIN: Distance: 72.34 cm[0m
+[0;32mI (64873) MAIN: Distance: 72.34 cm[0m
+[0;32mI (66893) MAIN: Distance: 72.34 cm[0m
+[0;32mI (68913) MAIN: Distance: 72.32 cm[0m
+[0;32mI (70923) MAIN: Distance: 72.34 cm[0m
+[0;32mI (72933) MAIN: Distance: 72.32 cm[0m
+[0;32mI (74953) MAIN: Distance: 72.34 cm[0m
+[0;32mI (76973) MAIN: Distance: 72.34 cm[0m
+[0;32mI (78993) MAIN: Distance: 72.32 cm[0m
+[0;32mI (81013) MAIN: Distance: 72.34 cm[0m
+[0;32mI (83033) MAIN: Distance: 72.32 cm[0m
+[0;32mI (85053) MAIN: Distance: 72.34 cm[0m
+[0;32mI (87073) MAIN: Distance: 72.34 cm[0m
+[0;32mI (89093) MAIN: Distance: 72.34 cm[0m
+[0;32mI (91113) MAIN: Distance: 72.34 cm[0m
+[0;32mI (93133) MAIN: Distance: 72.34 cm[0m
+[0;32mI (95153) MAIN: Distance: 72.32 cm[0m
+[0;32mI (97173) MAIN: Distance: 71.43 cm[0m
+[0;32mI (99193) MAIN: Distance: 72.32 cm[0m
+[0;32mI (101213) MAIN: Distance: 72.34 cm[0m
+[0;32mI (103233) MAIN: Distance: 72.34 cm[0m
+[0;32mI (105253) MAIN: Distance: 72.34 cm[0m
+[0;32mI (107273) MAIN: Distance: 72.34 cm[0m
+[0;32mI (109293) MAIN: Distance: 72.34 cm[0m
+[0;32mI (111313) MAIN: Distance: 72.34 cm[0m
+[0;32mI (113333) MAIN: Distance: 72.34 cm[0m
+[0;32mI (115353) MAIN: Distance: 72.27 cm[0m
+[0;32mI (117373) MAIN: Distance: 72.27 cm[0m
+[0;32mI (119393) MAIN: Distance: 72.27 cm[0m
+[0;32mI (121413) MAIN: Distance: 72.29 cm[0m
+[0;32mI (123433) MAIN: Distance: 72.27 cm[0m
+[0;32mI (125453) MAIN: Distance: 72.29 cm[0m
+[0;32mI (127473) MAIN: Distance: 72.29 cm[0m
+[0;32mI (129493) MAIN: Distance: 72.29 cm[0m
+[0;32mI (131513) MAIN: Distance: 72.27 cm[0m
+[0;32mI (133533) MAIN: Distance: 72.29 cm[0m
+[0;32mI (135543) MAIN: Distance: 72.27 cm[0m
+[0;32mI (137563) MAIN: Distance: 72.29 cm[0m
+[0;32mI (139583) MAIN: Distance: 72.27 cm[0m
+[0;32mI (141603) MAIN: Distance: 72.27 cm[0m
+[0;32mI (143623) MAIN: Distance: 72.27 cm[0m
+[0;32mI (145643) MAIN: Distance: 72.27 cm[0m
+[0;32mI (147663) MAIN: Distance: 72.27 cm[0m
+[0;32mI (149683) MAIN: Distance: 72.27 cm[0m
+[0;32mI (151703) MAIN: Distance: 72.29 cm[0m
+[0;32mI (153723) MAIN: Distance: 72.27 cm[0m
+[0;32mI (155743) MAIN: Distance: 72.29 cm[0m
+[0;32mI (157763) MAIN: Distance: 72.27 cm[0m
+[0;32mI (159783) MAIN: Distance: 72.29 cm[0m
+[0;32mI (161803) MAIN: Distance: 72.29 cm[0m
+[0;32mI (163823) MAIN: Distance: 72.27 cm[0m
+[0;32mI (165843) MAIN: Distance: 72.27 cm[0m
+[0;32mI (167863) MAIN: Distance: 72.29 cm[0m
+[0;32mI (169883) MAIN: Distance: 72.27 cm[0m
+[0;32mI (171903) MAIN: Distance: 72.29 cm[0m
+[0;32mI (173923) MAIN: Distance: 72.27 cm[0m
+[0;32mI (175943) MAIN: Distance: 72.29 cm[0m
+[0;32mI (177963) MAIN: Distance: 84.70 cm[0m
+[0;32mI (179983) MAIN: Distance: 72.29 cm[0m
+[0;32mI (182003) MAIN: Distance: 72.27 cm[0m
+[0;32mI (184023) MAIN: Distance: 72.29 cm[0m
+[0;32mI (186043) MAIN: Distance: 72.29 cm[0m
+[0;32mI (188063) MAIN: Distance: 72.29 cm[0m
+[0;32mI (190083) MAIN: Distance: 72.27 cm[0m
+[0;32mI (192103) MAIN: Distance: 72.27 cm[0m
+[0;32mI (194123) MAIN: Distance: 72.29 cm[0m
+[0;32mI (196143) MAIN: Distance: 72.29 cm[0m
+[0;32mI (198163) MAIN: Distance: 72.27 cm[0m
+[0;32mI (200183) MAIN: Distance: 69.85 cm[0m
+[0;32mI (202203) MAIN: Distance: 72.29 cm[0m
+[0;32mI (204223) MAIN: Distance: 72.27 cm[0m
+[0;32mI (206243) MAIN: Distance: 72.27 cm[0m
+[0;32mI (208253) MAIN: Distance: 72.29 cm[0m
+[0;32mI (210273) MAIN: Distance: 72.27 cm[0m
+[0;32mI (212293) MAIN: Distance: 72.29 cm[0m
+[0;32mI (214313) MAIN: Distance: 72.27 cm[0m
+[0;32mI (216333) MAIN: Distance: 72.27 cm[0m
+[0;32mI (218353) MAIN: Distance: 72.27 cm[0m
+[0;32mI (220373) MAIN: Distance: 72.29 cm[0m
+[0;32mI (222383) MAIN: Distance: 72.29 cm[0m
+[0;32mI (224403) MAIN: Distance: 72.27 cm[0m
+[0;32mI (226423) MAIN: Distance: 72.27 cm[0m
+[0;32mI (228443) MAIN: Distance: 72.29 cm[0m
+[0;32mI (230463) MAIN: Distance: 72.29 cm[0m
+[0;32mI (232483) MAIN: Distance: 72.29 cm[0m
+[0;32mI (234503) MAIN: Distance: 72.27 cm[0m
+[0;32mI (236523) MAIN: Distance: 72.29 cm[0m
+[0;32mI (238543) MAIN: Distance: 72.29 cm[0m
+[0;32mI (240563) MAIN: Distance: 72.29 cm[0m
+[0;32mI (242583) MAIN: Distance: 72.27 cm[0m
+[0;32mI (244603) MAIN: Distance: 72.27 cm[0m
+[0;32mI (246623) MAIN: Distance: 72.29 cm[0m
+[0;32mI (248643) MAIN: Distance: 72.29 cm[0m
+[0;32mI (250663) MAIN: Distance: 72.29 cm[0m
+[0;32mI (252683) MAIN: Distance: 72.27 cm[0m
+[0;32mI (254703) MAIN: Distance: 72.29 cm[0m
+[0;32mI (256723) MAIN: Distance: 72.29 cm[0m
+[0;32mI (258743) MAIN: Distance: 72.27 cm[0m
+[0;32mI (260763) MAIN: Distance: 72.29 cm[0m
+[0;32mI (262783) MAIN: Distance: 72.29 cm[0m
+[0;32mI (264803) MAIN: Distance: 60.33 cm[0m
+[0;32mI (266823) MAIN: Distance: 72.70 cm[0m
+[0;32mI (268843) MAIN: Distance: 72.58 cm[0m
+[0;32mI (270863) MAIN: Distance: 72.10 cm[0m
+[0;32mI (272883) MAIN: Distance: 72.15 cm[0m
+[0;32mI (274903) MAIN: Distance: 72.58 cm[0m
+[0;32mI (276923) MAIN: Distance: 72.65 cm[0m
+[0;32mI (278943) MAIN: Distance: 72.65 cm[0m
+[0;32mI (280963) MAIN: Distance: 72.65 cm[0m
+[0;32mI (282983) MAIN: Distance: 72.65 cm[0m
+[0;32mI (285003) MAIN: Distance: 72.65 cm[0m
+[0;32mI (287023) MAIN: Distance: 72.65 cm[0m
+[0;32mI (289043) MAIN: Distance: 72.65 cm[0m
+[0;32mI (291063) MAIN: Distance: 72.63 cm[0m
+[0;32mI (293083) MAIN: Distance: 72.63 cm[0m
+[0;32mI (295103) MAIN: Distance: 72.65 cm[0m
+[0;32mI (297123) MAIN: Distance: 72.65 cm[0m
+[0;32mI (299143) MAIN: Distance: 72.58 cm[0m
+[0;32mI (301163) MAIN: Distance: 72.65 cm[0m
+[0;32mI (303173) MAIN: Distance: 72.65 cm[0m
+[0;32mI (305193) MAIN: Distance: 72.22 cm[0m
+[0;32mI (307213) MAIN: Distance: 72.65 cm[0m
+[0;32mI (309233) MAIN: Distance: 72.65 cm[0m
+[0;32mI (311253) MAIN: Distance: 72.65 cm[0m
+[0;32mI (313273) MAIN: Distance: 72.58 cm[0m

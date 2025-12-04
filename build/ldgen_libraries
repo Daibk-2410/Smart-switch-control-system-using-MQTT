@@ -81,5 +81,6 @@ D:/workspace/esp32/Bai-tap/blink/build/esp-idf/perfmon/libperfmon.a
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/rt/librt.a
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/spiffs/libspiffs.a
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/libssd1306.a
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/main/libmain.a

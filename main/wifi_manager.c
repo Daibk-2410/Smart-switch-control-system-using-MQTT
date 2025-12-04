@@ -4,8 +4,8 @@
 #include "esp_log.h"
 #include "nvs_flash.h"
 
-#define WIFI_SSID "Haayf"
-#define WIFI_PASS "24102004@#"
+#define WIFI_SSID "Tro 1"
+#define WIFI_PASS "26102004"
 
 static const char *TAG = "WiFi";
 

@@ -3,6 +3,8 @@
 #include "mqtt_client.h"
 #include "relay_control.h"
 #include "esp_crt_bundle.h"
+#include <string.h>
+#include "oled_display.h"
 
 #define MQTT_BROKER "mqtts://09db723ea0574876a727418f489b0600.s1.eu.hivemq.cloud:8883"
 #define MQTT_USERNAME "relay1"
@@ -37,11 +39,13 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
         {
             relay_set(1);
             esp_mqtt_client_publish(client, MQTT_TOPIC_STATUS, "ON", 0, 1, 0);
+            oled_update(OLED_STATE_ON_INDEFINITE, 0);
         }
         else if (strncmp(event->data, "OFF", event->data_len) == 0)
         {
             relay_set(0);
             esp_mqtt_client_publish(client, MQTT_TOPIC_STATUS, "OFF", 0, 1, 0);
+            oled_update(OLED_STATE_OFF, 0);
         }
         break;
 
@@ -82,5 +86,5 @@ void mqtt_app_start(void)
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
 
-    ESP_LOGI(TAG, "🔌 MQTT client started");
+    ESP_LOGI(TAG, "MQTT client started");
 }

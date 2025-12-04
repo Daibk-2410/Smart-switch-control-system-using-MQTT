@@ -824,6 +824,13 @@ D:/workspace/esp32/Bai-tap/blink/build/esp-idf/wifi_provisioning/CMakeFiles/list
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/wifi_provisioning/CMakeFiles/install.dir
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/__idf_ssd1306.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/edit_cache.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/rebuild_cache.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/list_install_components.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/install.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/install/local.dir
+D:/workspace/esp32/Bai-tap/blink/build/esp-idf/ssd1306/CMakeFiles/install/strip.dir
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/espressif__led_strip/CMakeFiles/__idf_espressif__led_strip.dir
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/espressif__led_strip/CMakeFiles/edit_cache.dir
 D:/workspace/esp32/Bai-tap/blink/build/esp-idf/espressif__led_strip/CMakeFiles/rebuild_cache.dir
