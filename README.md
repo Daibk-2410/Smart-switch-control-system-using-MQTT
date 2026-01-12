@@ -1,69 +1,73 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-P4 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | -------- | -------- | -------- |
+# Hệ thống Giám sát Mực nước và Điều khiển Relay sử dụng MQTT
 
-# Blink Example
+Đây là một dự án IoT hoàn chỉnh, xây dựng một hệ thống thông minh cho phép giám sát mực nước và điều khiển một công tắc (relay) từ xa thông qua giao thức MQTT. Hệ thống được xây dựng trên nền tảng vi điều khiển ESP32, kết hợp với giao diện web hiện đại để điều khiển và giám sát.
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+| Supported Targets | ESP32 |
+| ----------------- | ----- |
 
-This example demonstrates how to blink a LED by using the GPIO driver or using the [led_strip](https://components.espressif.com/component/espressif/led_strip) library if the LED is addressable e.g. [WS2812](https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf). The `led_strip` library is installed via [component manager](main/idf_component.yml).
+## Tính năng chính
 
-## How to Use Example
+Hệ thống cung cấp một bộ tính năng đa dạng và linh hoạt, đáp ứng nhiều kịch bản sử dụng thực tế:
 
-Before project configuration and build, be sure to set the correct chip target using `idf.py set-target <chip_name>`.
+-   **Giám sát thời gian thực:** Liên tục đo khoảng cách (đại diện cho mực nước) bằng cảm biến siêu âm và hiển thị trực tiếp trên giao diện web.
+-   **Hiển thị cục bộ:** Tích hợp màn hình OLED để hiển thị trạng thái của relay và thời gian hẹn giờ còn lại ngay trên thiết bị.
+-   **Điều khiển đa phương thức:**
+    -   **Thủ công:** Bật/tắt relay ngay lập tức thông qua các nút bấm trên giao diện web hoặc các nút bấm vật lý kết nối trực tiếp với thiết bị.
+    -   **Hẹn giờ theo lịch trình:** Thêm/xóa các lịch bật/tắt relay theo ngày, tháng, năm, giờ, phút cụ thể.
+    -   **Hẹn giờ nhanh:** Sử dụng một nút bấm vật lý, nhấn `N` lần để hẹn giờ cho relay chạy trong `N * 10` phút.
+-   **Chế độ tự động thông minh:** Tự động bật/tắt máy bơm (relay) dựa trên hai ngưỡng mực nước (ngưỡng cạn và ngưỡng đầy) do người dùng cài đặt, phù hợp cho các ứng dụng bơm nước tự động.
+-   **Xác thực người dùng:** Giao diện điều khiển được bảo vệ bằng hệ thống Đăng nhập/Đăng ký, đảm bảo chỉ những người dùng được cấp phép mới có thể truy cập và điều khiển hệ thống.
 
-### Hardware Required
+## Cấu trúc Hệ thống
 
-* A development board with normal LED or addressable LED on-board (e.g., ESP32-S3-DevKitC, ESP32-C6-DevKitC etc.)
-* A USB cable for Power supply and programming
+Dự án được xây dựng dựa trên kiến trúc 3 thành phần chính:
 
-See [Development Boards](https://www.espressif.com/en/products/devkits) for more information about it.
+1.  **Firmware (ESP32):** Viết bằng ngôn ngữ C, sử dụng framework ESP-IDF và hệ điều hành thời gian thực FreeRTOS. Chịu trách nhiệm đọc dữ liệu từ cảm biến, điều khiển phần cứng (relay, OLED, nút bấm) và giao tiếp với MQTT Broker.
+2.  **Backend Server (Node.js/Express.js):** Xây dựng các API để quản lý người dùng (đăng ký, đăng nhập) và xử lý logic hẹn giờ theo lịch trình. Server kết nối với cơ sở dữ liệu MySQL để lưu trữ thông tin.
+3.  **Frontend (HTML/CSS/JS):** Giao diện người dùng trên nền tảng web, cho phép giám sát và tương tác với hệ thống theo thời gian thực thông qua kết nối MQTT (qua WebSocket) và gọi các API của backend.
 
-### Configure the Project
+## Yêu cầu Phần cứng
 
-Open the project configuration menu (`idf.py menuconfig`).
+*   Một bo mạch phát triển ESP32 (ví dụ: ESP32-DevKitC).
+*   Module Relay 1 kênh (5V).
+*   Cảm biến siêu âm (HC-SR04 hoặc tương tự).
+*   Màn hình OLED 0.96 inch giao tiếp I2C (SSD1306).
+*   3 nút bấm (push button).
+*   Breadboard và dây cắm.
+*   Cáp USB-C hoặc Micro-USB để cấp nguồn và nạp code.
 
-In the `Example Configuration` menu:
+## Hướng dẫn Cài đặt và Sử dụng
 
-* Select the LED type in the `Blink LED type` option.
-  * Use `GPIO` for regular LED
-  * Use `LED strip` for addressable LED
-* If the LED type is `LED strip`, select the backend peripheral
-  * `RMT` is only available for ESP targets with RMT peripheral supported
-  * `SPI` is available for all ESP targets
-* Set the GPIO number used for the signal in the `Blink GPIO number` option.
-* Set the blinking period in the `Blink period in ms` option.
+### 1. Cài đặt Firmware (ESP32)
 
-### Build and Flash
+1.  **Cài đặt ESP-IDF:** Làm theo hướng dẫn tại [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) của Espressif.
+2.  **Clone dự án:** `git clone https://github.com/Daibk-2410/Smart-switch-control-system-using-MQTT.git`
+3.  **Cấu hình:**
+    *   Trong thư mục `main`, tạo file `wifi_credentials.h` (file này không được commit lên Git) với nội dung:
+        ```c
+        #define WIFI_SSID "TEN_WIFI_CUA_BAN"
+        #define WIFI_PASS "MAT_KHAU_WIFI"
+        ```
+    *   Mở file `main/mqtt_manager.c` và cập nhật thông tin MQTT Broker của bạn (nếu có thay đổi).
+4.  **Build và Nạp code:**
+    *   Mở terminal ESP-IDF.
+    *   `cd` đến thư mục dự án.
+    *   Chạy `idf.py -p YOUR_PORT flash monitor` để build, nạp code và theo dõi log.
 
-Run `idf.py -p PORT flash monitor` to build, flash and monitor the project.
+### 2. Cài đặt Backend Server
 
-(To exit the serial monitor, type ``Ctrl-]``.)
+1.  **Di chuyển đến thư mục backend:** `cd web/backend-server`
+2.  **Cài đặt các thư viện:** `npm install`
+3.  **Cấu hình môi trường:**
+    *   Tạo file `.env` 
+    *   Điền các thông tin cần thiết: thông tin kết nối database MySQL, thông tin MQTT Broker, và `JWT_SECRET`.
+4.  **Khởi động server:** `node server.js`
+    *   Server sẽ chạy tại `http://localhost:3001` (hoặc cổng bạn đã cấu hình).
 
-See the [Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for full steps to configure and use ESP-IDF to build projects.
+### 3. Chạy Frontend
 
-## Example Output
-
-As you run the example, you will see the LED blinking, according to the previously defined period. For the addressable LED, you can also change the LED color by setting the `led_strip_set_pixel(led_strip, 0, 16, 16, 16);` (LED Strip, Pixel Number, Red, Green, Blue) with values from 0 to 255 in the [source file](main/blink_example_main.c).
-
-```text
-I (315) example: Example configured to blink addressable LED!
-I (325) example: Turning the LED OFF!
-I (1325) example: Turning the LED ON!
-I (2325) example: Turning the LED OFF!
-I (3325) example: Turning the LED ON!
-I (4325) example: Turning the LED OFF!
-I (5325) example: Turning the LED ON!
-I (6325) example: Turning the LED OFF!
-I (7325) example: Turning the LED ON!
-I (8325) example: Turning the LED OFF!
-```
-
-Note: The color order could be different according to the LED model.
-
-The pixel number indicates the pixel position in the LED strip. For a single LED, use 0.
-
-## Troubleshooting
-
-* If the LED isn't blinking, check the GPIO or the LED type selection in the `Example Configuration` menu.
-
-For any technical queries, please open an [issue](https://github.com/espressif/esp-idf/issues) on GitHub. We will get back to you soon.
+1.  **Cấu hình:**
+    *   Trong thư mục `web/frontend`, mở file `config.js`.
+    *   Đảm bảo `API_URL` và thông tin MQTT trỏ đến đúng địa chỉ.
+2.  **Mở file `login.html`** trực tiếp bằng trình duyệt web.
+3.  Đăng ký tài khoản mới và đăng nhập để bắt đầu sử dụng.
