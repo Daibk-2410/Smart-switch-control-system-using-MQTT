@@ -1,9 +1,18 @@
 USE iot_project;
-
 CREATE TABLE schedules (
     id INT AUTO_INCREMENT PRIMARY KEY,
     start_time TIME NOT NULL,
-        end_time TIME NOT NULL,
-        is_enabled BOOLEAN DEFAULT TRUE,
+    end_time TIME NOT NULL,
+    is_enabled BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+ALTER TABLE schedules
+MODIFY COLUMN start_time DATETIME NOT NULL,
+    MODIFY COLUMN end_time DATETIME NOT NULL;

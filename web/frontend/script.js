@@ -25,8 +25,17 @@ const turnOnInput = document.getElementById("turn-on-distance");
 const turnOffInput = document.getElementById("turn-off-distance");
 const turnOnDisplaySpan = document.getElementById("turn-on-display");
 const turnOffDisplaySpan = document.getElementById("turn-off-display");
-// Xóa biến checkbox vì không còn tồn tại
-// const autoControlToggle = document.getElementById("auto-control-toggle");
+// DOM ELEMENTS lấy thông tin người dùng
+const usernameDisplay = document.getElementById('username-display');
+const logoutButton = document.getElementById('logout-button');
+
+
+const token = localStorage.getItem('token');
+if (!token) {
+    // Nếu không có token, đá về trang đăng nhập
+    window.location.href = 'login.html';
+}
+
 
 // --- LOGIC MQTT ---
 client.on("connect", () => {
@@ -41,6 +50,7 @@ client.on("message", (topic, message) => {
     if (topic === topicStatus) {
         lastKnownRelayState = msgString;
         statusSpan.innerText = msgString;
+        statusSpan.setAttribute('data-status', msgString);
     } else if (topic === topicDistance) {
         currentDistance = parseFloat(msgString);
         if (!isNaN(currentDistance)) {
@@ -54,6 +64,36 @@ client.on("message", (topic, message) => {
 function sendCmd(cmd) {
     client.publish(topicCmd, cmd);
 }
+
+//  Gọi API để lấy thông tin người dùng và hiển thị.
+async function fetchAndDisplayUser() {
+    try {
+        const res = await fetch(`${API_URL}/api/auth/me`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        if (res.ok) {
+            const user = await res.json();
+            usernameDisplay.textContent = user.username;
+        } else {
+            // Nếu token hết hạn hoặc không hợp lệ, đá về trang đăng nhập
+            localStorage.removeItem('token');
+            window.location.href = 'login.html';
+        }
+    } catch (error) {
+        console.error('Lỗi lấy thông tin người dùng:', error);
+    }
+}
+//xử lý đăng xuất
+function handleLogout() {
+    localStorage.removeItem('token');
+    window.location.href = 'login.html';
+}
+// Gọi hàm lấy thông tin người dùng ngay khi trang được tải
+document.addEventListener('DOMContentLoaded', fetchAndDisplayUser);
+// Gắn sự kiện click cho nút đăng xuất
+logoutButton.addEventListener('click', handleLogout);
 
 // --- LOGIC ĐIỀU KHIỂN TỰ ĐỘNG ---
 
@@ -129,16 +169,30 @@ const originalSendCmd = sendCmd;
 // Hàm lấy và hiển thị danh sách lịch
 async function fetchSchedules() {
     try {
-        const response = await fetch(`${API_URL}/schedules`);
+        const response = await fetch(`${API_URL}/api/schedules`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
         const schedules = await response.json();
 
         const list = document.getElementById('schedule-list');
-        list.innerHTML = ''; // Xóa danh sách cũ
+        list.innerHTML = '';
 
         schedules.forEach(sch => {
+            // Chuyển đổi chuỗi ISO 8601 từ DB thành đối tượng Date
+            const startTime = new Date(sch.start_time);
+            const endTime = new Date(sch.end_time);
+
+            // Định dạng lại ngày tháng năm cho dễ đọc
+            const options = {
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', hour12: false
+            };
+            const formattedStart = startTime.toLocaleString('vi-VN', options);
+            const formattedEnd = endTime.toLocaleString('vi-VN', options);
+
             const li = document.createElement('li');
             li.innerHTML = `
-                <span>From <b>${sch.start_time}</b> to <b>${sch.end_time}</b></span>
+                <span>From <b>${formattedStart}</b> to <b>${formattedEnd}</b></span>
                 <button onclick="deleteSchedule(${sch.id})">Delete</button>
             `;
             list.appendChild(li);
@@ -156,9 +210,12 @@ async function addSchedule(event) {
     const endTime = document.getElementById('end_time').value;
 
     try {
-        await fetch(`${API_URL}/schedules`, {
+        await fetch(`${API_URL}/api/schedules`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
             body: JSON.stringify({ start_time: startTime, end_time: endTime })
         });
         fetchSchedules(); // Tải lại danh sách sau khi thêm
@@ -172,7 +229,10 @@ async function deleteSchedule(id) {
     if (!confirm('Are you sure you want to delete this schedule?')) return;
 
     try {
-        await fetch(`${API_URL}/schedules/${id}`, { method: 'DELETE' });
+        await fetch(`${API_URL}/api/schedules/${id}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
         fetchSchedules(); // Tải lại danh sách
     } catch (error) {
         console.error("Failed to delete schedule:", error);

@@ -25,11 +25,10 @@ static TimerHandle_t multi_press_timer = NULL;
 static TimerHandle_t debounce_timer = NULL;
 static volatile uint32_t last_pressed_pin = 0;
 
-// ==========================================================
-// === BỘ NÃO XỬ LÝ SỰ KIỆN NÚT BẤM (SAU KHI ĐÃ CHỐNG DỘI) ===
-// ==========================================================
+// Hàm xử lý sự kiện nút bấm sau khi đã chống dội
 void handle_button_press(uint32_t pin)
 {
+
     if (pin == TOGGLE_BUTTON_PIN)
     {
         if (timer_is_active())
@@ -42,30 +41,41 @@ void handle_button_press(uint32_t pin)
             relay_toggle();
         }
     }
-    else if (pin == TIMER_BUTTON_PIN)
+
+    if (pin == TIMER_BUTTON_PIN)
     {
-        if (relay_get_state() == 1)
+        vTaskDelay(50);
+        if (pin == TIMER_BUTTON_PIN)
         {
-            ESP_LOGW(TAG, "Relay is already ON. Please turn it off to set a timer.");
-        }
-        else
-        {
-            timer_press_count++;
-            ESP_LOGI(TAG, "Timer button press detected. Count: %d", timer_press_count);
-            // Reset "cửa sổ" 2 giây
-            xTimerReset(multi_press_timer, 0);
+
+            if (relay_get_state() == 1)
+            {
+                ESP_LOGW(TAG, "Relay is already ON. Please turn it off to set a timer.");
+            }
+            else
+            {
+                timer_press_count++;
+                ESP_LOGI(TAG, "Timer button press detected. Count: %d", timer_press_count);
+                // Reset "cửa sổ" 2 giây
+                xTimerReset(multi_press_timer, 0);
+            }
         }
     }
-    else if (pin == CANCEL_TIMER_BUTTON_PIN)
+
+    if (pin == CANCEL_TIMER_BUTTON_PIN)
     {
-        ESP_LOGI(TAG, "Action: Cancel Timer");
-        // Reset luôn bộ đếm nếu người dùng đang nhấn dở
-        if (timer_press_count > 0)
+        vTaskDelay(50);
+        if (pin == CANCEL_TIMER_BUTTON_PIN)
         {
-            timer_press_count = 0;
-            ESP_LOGI(TAG, "Multi-press count has been reset.");
+            ESP_LOGI(TAG, "Action: Cancel Timer");
+            // Reset luôn bộ đếm nếu người dùng đang nhấn dở
+            if (timer_press_count > 0)
+            {
+                timer_press_count = 0;
+                ESP_LOGI(TAG, "Multi-press count has been reset.");
+            }
+            timer_stop();
         }
-        timer_stop();
     }
 }
 
@@ -74,6 +84,8 @@ void debounce_timer_callback(TimerHandle_t xTimer)
 {
     // Thời gian yên tĩnh đã hết, bây giờ mới xử lý sự kiện
     handle_button_press(last_pressed_pin);
+    // Thêm độ trễ nhỏ trước khi kích hoạt lại ngắt
+    vTaskDelay(pdMS_TO_TICKS(10));
     // Kích hoạt lại ngắt cho tất cả các nút
     gpio_intr_enable(TOGGLE_BUTTON_PIN);
     gpio_intr_enable(TIMER_BUTTON_PIN);
@@ -118,8 +130,8 @@ void button_init(void)
     gpio_config(&io_conf);
 
     // Tạo các timer
-    // Timer chống dội 50ms, one-shot
-    debounce_timer = xTimerCreate("DebounceTimer", pdMS_TO_TICKS(50), pdFALSE, 0, debounce_timer_callback);
+    // Timer chống dội 100ms, one-shot
+    debounce_timer = xTimerCreate("DebounceTimer", pdMS_TO_TICKS(100), pdFALSE, 0, debounce_timer_callback);
     // Timer đa-nhấn 2 giây, one-shot
     multi_press_timer = xTimerCreate("MultiPressTimer", pdMS_TO_TICKS(2000), pdFALSE, 0, multi_press_timer_callback);
 

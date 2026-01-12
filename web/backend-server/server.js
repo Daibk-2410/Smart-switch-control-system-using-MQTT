@@ -4,6 +4,8 @@ const express = require('express');
 const mysql = require('mysql2/promise');
 const mqtt = require('mqtt');
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // --- CẤU HÌNH (Đọc từ file .env) ---
 const MYSQL_CONFIG = {
@@ -21,6 +23,7 @@ const MQTT_OPTIONS = {
 const MQTT_TOPIC_CMD = "home/relay1/cmd";
 
 const PORT = 3000; // Cổng backend server sẽ chạy
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // --- KHỞI TẠO ---
 const app = express();
@@ -40,18 +43,120 @@ let lastStateByScheduler = null;
 
 // --- API ENDPOINTS ---
 
-// API để lấy tất cả lịch trình
-app.get('/schedules', async (req, res) => {
+// Đăng ký
+app.post('/api/auth/register', async (req, res) => {
     try {
-        const [rows] = await dbConnection.query('SELECT id, TIME_FORMAT(start_time, "%H:%i") as start_time, TIME_FORMAT(end_time, "%H:%i") as end_time, is_enabled FROM schedules ORDER BY start_time');
-        res.json(rows);
+        const { username, email, password } = req.body;
+        if (!username || !email || !password) {
+            return res.status(400).json({ message: 'Vui lòng điền đầy đủ thông tin.' });
+        }
+
+        // Kiểm tra xem username hoặc email đã tồn tại chưa
+        const [existingUser] = await dbConnection.query('SELECT * FROM users WHERE username = ? OR email = ?', [username, email]);
+        if (existingUser.length > 0) {
+            return res.status(409).json({ message: 'Tên người dùng hoặc email đã tồn tại.' });
+        }
+
+        // Băm mật khẩu
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Lưu người dùng vào database
+        await dbConnection.execute(
+            'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
+            [username, email, hashedPassword]
+        );
+
+        res.status(201).json({ message: 'Đăng ký thành công!' });
     } catch (error) {
-        res.status(500).json({ message: 'Error fetching schedules', error });
+        console.error("Lỗi đăng ký:", error);
+        res.status(500).json({ message: 'Lỗi máy chủ.' });
     }
 });
 
+// API Đăng nhập
+app.post('/api/auth/login', async (req, res) => {
+    try {
+        // Thay đổi: Nhận 'email' thay vì 'username' từ body
+        const { email, password } = req.body;
+        if (!email || !password) {
+            return res.status(400).json({ message: 'Vui lòng điền email và mật khẩu.' });
+        }
+
+        // Tìm người dùng trong database bằng EMAIL
+        const [users] = await dbConnection.query('SELECT * FROM users WHERE email = ?', [email]);
+        if (users.length === 0) {
+            // Giữ thông báo chung chung để bảo mật
+            return res.status(401).json({ message: 'Email hoặc mật khẩu không đúng.' });
+        }
+        const user = users[0];
+
+        // So sánh mật khẩu (không đổi)
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).json({ message: 'Email hoặc mật khẩu không đúng.' });
+        }
+
+        // Tạo JWT (không đổi)
+        const token = jwt.sign(
+            { id: user.id, username: user.username }, // Vẫn giữ username trong token
+            JWT_SECRET,
+            { expiresIn: '1d' }
+        );
+
+        res.json({ message: 'Đăng nhập thành công!', token });
+
+    } catch (error) {
+        console.error("Lỗi đăng nhập:", error);
+        res.status(500).json({ message: 'Lỗi máy chủ.' });
+    }
+});
+// === MIDDLEWARE BẢO VỆ ===
+const protect = (req, res, next) => {
+    let token;
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+        try {
+            token = req.headers.authorization.split(' ')[1];
+            const decoded = jwt.verify(token, JWT_SECRET);
+            // Gắn thông tin người dùng vào request để các hàm sau có thể dùng
+            req.user = decoded;
+            next(); // Cho phép đi tiếp
+        } catch (error) {
+            res.status(401).json({ message: 'Token không hợp lệ, truy cập bị từ chối.' });
+        }
+    }
+    if (!token) {
+        res.status(401).json({ message: 'Không có token, truy cập bị từ chối.' });
+    }
+};
+
+// API lấy thông tin người dùng
+app.get('/api/auth/me', protect, async (req, res) => {
+    if (req.user) {
+        res.json({
+            id: req.user.id,
+            username: req.user.username
+        });
+    } else {
+        res.status(404).json({ message: 'Không tìm thấy người dùng.' });
+    }
+});
+
+// API để lấy tất cả lịch trình
+app.get('/api/schedules', protect, async (req, res) => {
+    try {
+        const [rows] = await dbConnection.query(
+            "SELECT id, DATE_FORMAT(start_time, '%Y-%m-%dT%H:%i:%s') as start_time, DATE_FORMAT(end_time, '%Y-%m-%dT%H:%i:%s') as end_time, is_enabled FROM schedules ORDER BY start_time"
+        );
+        res.json(rows);
+    } catch (error) {
+        console.error("Lỗi lấy danh sách lịch trình:", error);
+        res.status(500).json({ message: 'Lỗi máy chủ khi lấy danh sách lịch trình.' });
+    }
+});
+
+
 // API để thêm một lịch trình mới
-app.post('/schedules', async (req, res) => {
+app.post('/api/schedules', protect, async (req, res) => {
     try {
         const { start_time, end_time } = req.body;
         if (!start_time || !end_time) {
@@ -68,7 +173,7 @@ app.post('/schedules', async (req, res) => {
 });
 
 // API để xóa một lịch trình
-app.delete('/schedules/:id', async (req, res) => {
+app.delete('/api/schedules/:id', protect, async (req, res) => {
     try {
         const { id } = req.params;
         await dbConnection.execute('DELETE FROM schedules WHERE id = ?', [id]);
@@ -81,26 +186,25 @@ app.delete('/schedules/:id', async (req, res) => {
 // --- LOGIC KIỂM TRA LỊCH TRÌNH ---
 async function checkSchedules() {
     try {
-        const [schedules] = await dbConnection.query('SELECT start_time, end_time FROM schedules WHERE is_enabled = TRUE');
-
+        // Lấy thời gian hiện tại của server
         const now = new Date();
-        const currentTime = now.toTimeString().slice(0, 8); // Format HH:MM:SS
 
-        let relayShouldBeOn = false;
-        for (const schedule of schedules) {
-            if (currentTime >= schedule.start_time && currentTime < schedule.end_time) {
-                relayShouldBeOn = true;
-                break;
-            }
-        }
+        // Truy vấn để tìm bất kỳ lịch trình nào đang hoạt động
+        // Tức là thời gian hiện tại nằm giữa start_time và end_time
+        const [activeSchedules] = await dbConnection.query(
+            'SELECT * FROM schedules WHERE is_enabled = TRUE AND ? BETWEEN start_time AND end_time',
+            [now]
+        );
+
+        // Nếu có ít nhất một lịch trình đang hoạt động
+        const relayShouldBeOn = activeSchedules.length > 0;
 
         const desiredState = relayShouldBeOn ? 'ON' : 'OFF';
 
-        // Chỉ gửi lệnh nếu trạng thái mong muốn khác với trạng thái cuối cùng
         if (desiredState !== lastStateByScheduler) {
-            console.log(`⏰ Time: ${currentTime}, Desired state: ${desiredState}. Sending command...`);
+            console.log(`⏰ Schedule check: An active schedule was found. Desired state: ${desiredState}. Sending command...`);
             mqttClient.publish(MQTT_TOPIC_CMD, desiredState);
-            lastStateByScheduler = desiredState; // Cập nhật trạng thái
+            lastStateByScheduler = desiredState;
         }
 
     } catch (error) {

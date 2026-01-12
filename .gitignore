@@ -1,5 +1,19 @@
-# Bỏ qua các file biến môi trường
-backend-server/.env
+# Thư mục build của ESP-IDF
+build/
 
-# Bỏ qua thư mục node_modules
-backend-server/node_modules/
+# File cấu hình cục bộ của ESP-IDF
+sdkconfig
+
+# Các file biến môi trường
+web/backend-server/.env
+
+# Thư mục node_modules
+web/backend-server/node_modules/
+
+# thư mục config trong frontend
+web/frontend/config
+
+# Các file của VS Code
+.vscode/
+
+
