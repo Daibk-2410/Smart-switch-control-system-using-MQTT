@@ -10,6 +10,7 @@
 #include "relay_control.h"
 #include "timer_control.h"
 #include <stdbool.h>
+#include <oled_display.h>
 
 #define TOGGLE_BUTTON_PIN 32
 #define TIMER_BUTTON_PIN 33
@@ -56,6 +57,8 @@ void handle_button_press(uint32_t pin)
             {
                 timer_press_count++;
                 ESP_LOGI(TAG, "Timer button press detected. Count: %d", timer_press_count);
+                int projected_seconds = timer_press_count * 10 * 60;
+                oled_update(OLED_STATE_ON_TIMER, projected_seconds);
                 // Reset "cửa sổ" 2 giây
                 xTimerReset(multi_press_timer, 0);
             }
